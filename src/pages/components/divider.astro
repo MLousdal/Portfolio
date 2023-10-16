@@ -1,0 +1,44 @@
+---
+import Master from "@layouts/Master.astro";
+import Card from "@components/Card.astro";
+---
+
+<Master title="Divider | Overview">
+  <main id="main" class="container grid grid-cols-1 gap-12">
+    <section>
+      <header class="prose lg:prose-lg mb-6">
+        <h1 id="divider">Divider</h1>
+      </header>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card>
+          <header class="p-4 pb-0">
+            <h2 class="mt-0">Default</h2>
+            <p>You can use default divider with <code>&lt;hr /&gt;</code></p>
+            <hr />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+              nostrum numquam reprehenderit facilis. Dolor blanditiis molestiae
+              doloribus ratione corrupti dolorum.
+            </p>
+          </header>
+        </Card>
+        <Card>
+          <header class="p-4 pb-0">
+            <h2 class="mt-0">Divider with Text</h2>
+            <p>
+              Add <code>data-text</code> to the <code>&lt;hr /&gt;</code> to add
+              text
+            </p>
+            <hr data-text="Hello World!" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+              nostrum numquam reprehenderit facilis. Dolor blanditiis molestiae
+              doloribus ratione corrupti dolorum.
+            </p>
+          </header>
+        </Card>
+      </div>
+    </section>
+    <hr data-text="Hello World!" />
+  </main>
+</Master>

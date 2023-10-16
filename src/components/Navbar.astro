@@ -1,0 +1,36 @@
+---
+const pages = [
+  { name: "Home", url: "/" },
+  { name: "Overview", url: "/components" },
+];
+---
+
+<header class="w-full p-4 border-b-2">
+  <div class="container flex">
+    <a
+      href="#main"
+      class="btn btn-sm btn-info z-10 transition left-0 bg-primary text-primary-content absolute p-3 m-3 -translate-y-32 focus:translate-y-0"
+      >Jump to content</a
+    >
+    <nav
+      class="flex justify-between w-full items-center"
+      aria-label="Main Menu"
+    >
+      <a href="/" class="font-display text-2xl">LOGO</a>
+      <ul class="flex gap-4 items-center">
+        {
+          pages.map((page) => (
+            <li>
+              <a
+                href={page.url}
+                class="font-display font-normal focus:underline hover:underline underline-offset-4 decoration-wavy outline-none"
+              >
+                {page.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

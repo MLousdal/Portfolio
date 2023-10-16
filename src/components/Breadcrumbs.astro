@@ -1,0 +1,33 @@
+---
+const breadcrumbs = Astro.url.pathname.split('/').filter(function(crumb) {
+    return crumb.trim() !== '';
+  })
+
+  var breadcrumbObjects = [{name: "<i class='ico align-middle'>home</i>", url: "/"}];
+  var accumulatedUrl = '';
+
+  for (var i = 0; i < breadcrumbs.length - 1; i++) {
+    accumulatedUrl += '/' + breadcrumbs[i];
+    var breadcrumb = {
+      name: breadcrumbs[i].charAt(0).toUpperCase() + breadcrumbs[i].slice(1),
+      url: accumulatedUrl
+    };
+    breadcrumbObjects.push(breadcrumb);
+  }
+---
+
+{
+  breadcrumbs.length > 0 && (
+    <nav class="container py-4" aria-label="Breadcrumbs">
+      <ul class="flex gap-2 items-center">
+        {breadcrumbObjects.map(
+          (path, index) =>
+            index != breadcrumbObjects.length - 1 && <li class="text-gray-500" set:html={path.name}></li><li>/</li>
+        )}
+        <li>
+          <a href={breadcrumbObjects[breadcrumbObjects.length -1].url} set:html={breadcrumbObjects[breadcrumbObjects.length -1].name}></a>
+        </li>
+      </ul>
+    </nav>
+  )
+}

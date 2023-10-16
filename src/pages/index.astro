@@ -1,0 +1,51 @@
+---
+import Master from "../layouts/Master.astro";
+
+const sections = ["cards", "buttons", "divider"];
+---
+
+<Master title="Welcome to Astro.">
+	<main id="main" class="container grid grid-cols-1 gap-12">
+		<section class="prose max-w-none w-full lg:prose-xl pt-8">
+			<header>
+				<h1>Astro + Tailwindcss, Neubruatlist UI Kit</h1>
+			</header>
+			<p>
+				Introducing the "NeuBrutalist UI Kit for TailwindCSS": A bold and
+				innovative design solution that merges the raw power of the Neubrutalist
+				style with the utility-first approach of TailwindCSS, delivering a truly
+				unique and captivating experience. With meticulously crafted components,
+				striking visual elements, and a harmonious color palette, this UI Kit
+				empowers designers and developers to create interfaces that break free
+				from convention, evoke emotions, and leave a lasting impression. Embrace
+				the raw concrete-like textures, bold typography, and optimized
+				customization options to unleash your creativity and build interfaces
+				that embody the essence of Neubrutalism, while seamlessly integrating
+				into your TailwindCSS projects.
+			</p>
+			<h2>Table of contents</h2>
+			<ul class="list not-prose">
+				<li class="list-none border-b last:border-b-0">
+					<a
+						href="components"
+						class="text-sm p-3 w-full block primary-transition"
+					>
+						Overview
+					</a>
+				</li>
+				{
+					sections.map((item) => (
+						<li class="list-none border-b last:border-b-0">
+							<a
+								href={"/components/" + item}
+								class="text-sm p-3 w-full block primary-transition"
+							>
+								{item.charAt(0).toUpperCase() + item.slice(1)}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+	</main>
+</Master>

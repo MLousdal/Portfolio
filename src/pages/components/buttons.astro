@@ -1,0 +1,155 @@
+---
+import Master from "@layouts/Master.astro";
+import Card from "@components/Card.astro";
+---
+
+<Master title="Buttons | Overview">
+  <main id="main" class="container grid grid-cols-1 gap-12">
+    <section class="min-h-screen">
+      <header class="prose lg:prose-lg mb-6">
+        <h1 id="buttons">Buttons</h1>
+      </header>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card classes="max-w-none md:col-span-2">
+          <header class="p-4 pb-0">
+            <h2 class="mt-0">Default</h2>
+          </header>
+          <ul class="not-prose px-4 pb-4 my-0 flex gap-4 flex-wrap">
+            <li class="list-none"><button class="btn">Primary</button></li>
+            <li class="list-none">
+              <button class="btn btn-info">Info</button>
+            </li>
+            <li class="list-none">
+              <button class="btn btn-warning">Warning</button>
+            </li>
+            <li class="list-none">
+              <button class="btn btn-danger">Danger</button>
+            </li>
+            <li class="list-none">
+              <button class="btn btn-success">Success</button>
+            </li>
+          </ul>
+        </Card>
+        <Card classes="max-w-none md:col-span-2">
+          <header class="p-4 pb-0">
+            <h2 class="mt-0">Outline</h2>
+          </header>
+          <ul class="not-prose px-4 pb-4 my-0 flex gap-4 flex-wrap">
+            <li class="list-none"><button class="btn">Primary</button></li>
+            <li class="list-none">
+              <button class="btn btn-info-outline">Info</button>
+            </li>
+            <li class="list-none">
+              <button class="btn btn-warning-outline">Warning</button>
+            </li>
+            <li class="list-none">
+              <button class="btn btn-danger-outline">Danger</button>
+            </li>
+            <li class="list-none">
+              <button class="btn btn-success-outline">Success</button>
+            </li>
+          </ul>
+        </Card>
+        <Card classes="max-w-none">
+          <header class="p-4 pb-0">
+            <h2 class="mt-0">Button Sizes</h2>
+          </header>
+          <ul
+            class="not-prose px-4 pb-4 my-0 flex gap-4 flex-wrap items-center"
+          >
+            <li class="list-none"><button class="btn btn-sm">Small</button></li>
+            <li class="list-none">
+              <button class="btn">Normal</button>
+            </li>
+            <li class="list-none">
+              <button class="btn btn-lg">Large</button>
+            </li>
+          </ul>
+        </Card>
+        <Card classes="max-w-none">
+          <header class="p-4 pb-0">
+            <h2 class="mt-0">Button States</h2>
+          </header>
+          <ul
+            class="not-prose px-4 pb-4 my-0 flex gap-4 flex-wrap items-center"
+          >
+            <li class="list-none">
+              <button class="btn">Normal</button>
+            </li>
+            <li class="list-none">
+              <button class="btn" disabled>Disabled</button>
+            </li>
+            <li class="list-none">
+              <button
+                class="btn shadow-none hover:shadow-none bg-black text-white"
+                >Active</button
+              >
+            </li>
+          </ul>
+        </Card>
+        <Card classes="max-w-none md:col-span-2">
+          <header class="p-4 pb-0">
+            <h2 class="mt-0">Icon Button</h2>
+          </header>
+          <ul class="not-prose px-4 pb-4 my-0 flex gap-4 flex-wrap">
+            <li class="list-none">
+              <button class="btn btn-icon"
+                ><i class="ico">home</i> Primary</button
+              >
+            </li>
+            <li class="list-none">
+              <button class="btn btn-info btn-icon"
+                ><i class="ico">info</i> Info</button
+              >
+            </li>
+            <li class="list-none">
+              <button class="btn btn-warning btn-icon"
+                ><i class="ico">warning</i> Warning</button
+              >
+            </li>
+            <li class="list-none">
+              <button class="btn btn-danger btn-icon"
+                ><i class="ico">error</i> Danger</button
+              >
+            </li>
+            <li class="list-none">
+              <button class="btn btn-success btn-icon"
+                ><i class="ico">done</i> Success</button
+              >
+            </li>
+          </ul>
+        </Card>
+        <Card classes="max-w-none">
+          <header class="p-4 pb-0">
+            <h2 class="mt-0">Icon Only</h2>
+          </header>
+          <ul class="not-prose px-4 pb-4 my-0 flex gap-4 flex-wrap">
+            <li class="list-none">
+              <button class="btn btn-icon"><i class="ico">home</i></button>
+            </li>
+            <li class="list-none">
+              <button class="btn btn-info btn-icon"
+                ><i class="ico">info</i></button
+              >
+            </li>
+            <li class="list-none">
+              <button class="btn btn-warning btn-icon"
+                ><i class="ico">warning</i></button
+              >
+            </li>
+            <li class="list-none">
+              <button class="btn btn-danger btn-icon"
+                ><i class="ico">error</i></button
+              >
+            </li>
+            <li class="list-none">
+              <button class="btn btn-success btn-icon"
+                ><i class="ico">done</i></button
+              >
+            </li>
+          </ul>
+        </Card>
+      </div>
+    </section>
+  </main>
+</Master>
