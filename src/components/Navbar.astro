@@ -1,31 +1,79 @@
 ---
+import Email from "/email.svg";
+import Github from "/github.svg";
+import LinkedIn from "/linkedin.svg";
+
 const pages = [
-  { name: "Home", url: "/" },
-  { name: "Overview", url: "/components" },
+  { name: "Om mig", url: "#about" },
+  { name: "Erfaring", url: "#experience" },
+];
+
+const socials = [
+  { name: "Email", url: "mailto:mads.lousdal@gmail.com", icon: Email },
+  { name: "Github", url: "https://github.com/MLousdal", icon: Github },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/mads-lousdal/",
+    icon: LinkedIn,
+  },
 ];
 ---
 
-<header class="w-full p-4 border-b-2">
-  <div class="container flex">
-    <a
-      href="#main"
-      class="btn btn-sm btn-info z-10 transition left-0 bg-primary text-primary-content absolute p-3 m-3 -translate-y-32 focus:translate-y-0"
-      >Jump to content</a
+<header class="fixed top-0 left-0 right-0 z-10 bg-white border-b-2">
+  <div
+    class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto"
+  >
+    <a href="#main" class="text-2xl outline-none font-display focus:underline hover:underline underline-offset-4 decoration-wavy decoration-red-600">ML</a>
+    <button
+      id="navbarBtn"
+      type="button"
+      class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-black rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-black"
+      aria-controls="navbar-solid-bg"
+      aria-expanded="false"
     >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"></path>
+      </svg>
+    </button>
     <nav
-      class="flex justify-between w-full items-center"
+      class="flex-col hidden w-full gap-2 lg:gap-6 lg:flex lg:w-auto lg:flex-row"
+      id="navbar"
       aria-label="Main Menu"
     >
-      <a href="/" class="font-display text-2xl">LOGO</a>
-      <ul class="flex gap-4 items-center">
+      <ul
+        class="flex flex-col gap-2 mt-4 font-medium rounded-lg lg:gap-6 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent"
+      >
         {
           pages.map((page) => (
-            <li>
+            <li class="m-0">
               <a
                 href={page.url}
-                class="font-display font-normal focus:underline hover:underline underline-offset-4 decoration-wavy outline-none"
+                class="block px-4 py-2 font-normal bg-transparent rounded outline-none font-display focus:underline hover:underline underline-offset-4 decoration-wavy decoration-red-600 lg:p-0"
               >
                 {page.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <ul class="flex flex-col justify-center gap-4 pt-4 border-t-2 lg:border-t-0 lg:border-s-2 lg:pt-0 lg:ps-6 lg:gap-6 lg:flex-row align-center">
+        {
+          socials.map((page) => (
+            <li class="px-4 lg:p-0">
+              <a href={page.url} target="_blank" class="outline-none social-link">
+                <img class="block w-6" src={page.icon} alt={page.name} />
               </a>
             </li>
           ))
@@ -34,3 +82,27 @@ const pages = [
     </nav>
   </div>
 </header>
+
+<script>
+  const navbarLinks = document.querySelectorAll("a[href]");
+  const navbarBtn = document.querySelector("#navbarBtn");
+  const navbar = document.querySelector("#navbar");
+
+  navbarBtn?.addEventListener("click", () => {
+    if (!navbar?.classList.contains("hidden")) {
+        navbar?.classList.add("hidden");
+        navbar?.classList.remove("flex");
+      } else {
+        navbar?.classList.remove("hidden");
+        navbar?.classList.add("flex");
+      }
+  });
+
+  navbarLinks.forEach((l) => {
+    l.addEventListener("click", () => {
+      if (!navbar?.classList.contains("hidden")) {
+        navbar?.classList.add("hidden");
+      }
+    });
+  });
+</script>

@@ -1,0 +1,17 @@
+---
+export interface Props {
+  classes?: string;
+}
+const { classes } = Astro.props;
+---
+
+<div class:list={["border-2 rounded-md shadow", classes]}>
+  <canvas id="gradient-canvas" data-transition-in></canvas>
+</div>
+
+<script>
+  import { Gradient } from "../assets/gradient.js";
+
+  const gradient = new Gradient();
+  gradient.initGradient("#gradient-canvas");
+</script>

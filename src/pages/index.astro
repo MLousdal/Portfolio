@@ -1,51 +1,61 @@
 ---
 import Master from "../layouts/Master.astro";
-
-const sections = ["cards", "buttons", "divider"];
+import Gradient from "../components/Gradient.astro";
+import Card from "../components/Card.astro";
 ---
 
-<Master title="Welcome to Astro.">
-	<main id="main" class="container grid grid-cols-1 gap-12">
-		<section class="prose max-w-none w-full lg:prose-xl pt-8">
-			<header>
-				<h1>Astro + Tailwindcss, Neubruatlist UI Kit</h1>
+<Master title="Mads Lousdal">
+  <main id="main" class="container grid grid-cols-1 gap-24 pb-12 scroll-m-24">
+    <section
+      class="flex flex-col justify-center w-full h-screen gap-8 lg:items-center lg:justify-between lg:flex-row max-w-none"
+    >
+      <header class="prose prose-lg lg:prose-xl h-fit">
+        <h1>
+          <span class="text-lg text-primary">Hejsa!</span><br />Jeg er Mads Lousdal
+        </h1>
+        <p>
+          Som en frontend-udvikler med fokus på e-handel og webapplikationer har
+          jeg en løsnings orienteret tilgang, der er centreret omkring brugernes
+          behov og ønsker.
+        </p>
+      </header>
+      <Gradient classes="w-1/3 lg:w-1/4" />
+    </section>
+    <section class="flex flex-col items-center gap-8 scroll-m-24" id="about">
+      <header class="mb-2 prose prose-lg lg:prose-xl">
+        <h2>Hvad laver jeg?</h2>
+				<p>
+					Jeg arbejder som frontend-udvikler og har haft denne spændende rolle i
+					et år. Mit hovedansvar er at udvikle nye widgets, sider og
+					webapplikationer, samtidig med at jeg sørger for vedligeholdelsen af
+					eksisterende løsninger. Mit arbejde indebærer at omsætte designkoncepter
+					til brugervenlige og funktionelle grænseflader, der hjælper med at skabe
+					engagerende onlineoplevelser for vores brugere.
+				</p>
 			</header>
-			<p>
-				Introducing the "NeuBrutalist UI Kit for TailwindCSS": A bold and
-				innovative design solution that merges the raw power of the Neubrutalist
-				style with the utility-first approach of TailwindCSS, delivering a truly
-				unique and captivating experience. With meticulously crafted components,
-				striking visual elements, and a harmonious color palette, this UI Kit
-				empowers designers and developers to create interfaces that break free
-				from convention, evoke emotions, and leave a lasting impression. Embrace
-				the raw concrete-like textures, bold typography, and optimized
-				customization options to unleash your creativity and build interfaces
-				that embody the essence of Neubrutalism, while seamlessly integrating
-				into your TailwindCSS projects.
-			</p>
-			<h2>Table of contents</h2>
-			<ul class="list not-prose">
-				<li class="list-none border-b last:border-b-0">
-					<a
-						href="components"
-						class="text-sm p-3 w-full block primary-transition"
-					>
-						Overview
-					</a>
-				</li>
-				{
-					sections.map((item) => (
-						<li class="list-none border-b last:border-b-0">
-							<a
-								href={"/components/" + item}
-								class="text-sm p-3 w-full block primary-transition"
-							>
-								{item.charAt(0).toUpperCase() + item.slice(1)}
-							</a>
-						</li>
-					))
-				}
-			</ul>
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
+        <Card
+          title="Card With Header, Img And Footer"
+          body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
+          img="https://source.unsplash.com/AJgFLjnmSs4"
+        />
+        <Card
+          title="Card With Header, Img And Footer"
+          body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
+          img="https://source.unsplash.com/AJgFLjnmSs4"
+        />
+        <Card
+          title="Card With Header, Img And Footer"
+          body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
+          img="https://source.unsplash.com/AJgFLjnmSs4"
+        />
+      </div>
+    </section>
+		<section class="flex flex-col items-center gap-8 scroll-m-16" id="experience">
+			<header class="w-full mb-2 prose prose-lg lg:prose-xl">
+        <h2>Erfaring</h2>
+			</header>
+			<div class="h-60"></div>
 		</section>
-	</main>
+  </main>
 </Master>

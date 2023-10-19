@@ -19,7 +19,7 @@
   }
 
   h1 {
-    @apply text-6xl;
+    @apply text-4xl mb-0;
   }
 
   hr {
@@ -37,6 +37,11 @@
 
   .prose a[href] {
     @apply underline;
+  }
+
+  .social-link:hover img,
+  .social-link:focus img {
+    filter: invert(18%) sepia(96%) saturate(2890%) hue-rotate(349deg) brightness(97%) contrast(92%);
   }
 }
 
@@ -132,4 +137,13 @@
 
   /* Support for IE. */
   font-feature-settings: "liga";
+}
+
+#gradient-canvas {
+  width: 100%;
+  height: 100%;
+  --gradient-color-1: #e63946;
+  --gradient-color-2: #f1faee;
+  --gradient-color-3: #457b9d;
+  --gradient-color-4: #1d3557;
 }

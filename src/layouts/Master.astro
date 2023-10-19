@@ -1,5 +1,4 @@
 ---
-import Breadcrumbs from "@components/Breadcrumbs.astro";
 import "../assets/styles.css";
 import Navbar from "@components/Navbar.astro";
 
@@ -30,9 +29,8 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="scroll-smooth">
 		<Navbar />
-		<Breadcrumbs />
 		<slot />
 	</body>
 </html>
