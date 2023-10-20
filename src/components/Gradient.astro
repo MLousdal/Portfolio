@@ -5,8 +5,13 @@ export interface Props {
 const { classes } = Astro.props;
 ---
 
-<div class:list={["border-2 rounded-md shadow", classes]}>
-  <canvas id="gradient-canvas" data-transition-in></canvas>
+<div class:list={["border-2 rounded-md shadow cursor-pointer dark:shadow-white", classes]}>
+  <canvas
+    id="gradient-canvas"
+    data-transition-in
+    class="w-full h-full"
+    style="--gradient-color-1: #e63946;--gradient-color-2: #f1faee;--gradient-color-3: #457b9d;--gradient-color-4: #1d3557;"
+  ></canvas>
 </div>
 
 <script>
@@ -14,4 +19,28 @@ const { classes } = Astro.props;
 
   const gradient = new Gradient();
   gradient.initGradient("#gradient-canvas");
+
+  function generateRandomColor() {
+    return (
+      "#" +
+      Math.floor(Math.random() * 0xffffff)
+        .toString(16)
+        .padStart(6, "0")
+    );
+  }
+
+  function generateRandomColorCodes(count: number) {
+    return Array.from({ length: count }, generateRandomColor);
+  }
+
+  const gradientElm = document.querySelector("#gradient-canvas");
+  gradientElm?.addEventListener("click", () => {
+    const randomColorCodes = generateRandomColorCodes(4);
+    let styleString = "";
+    randomColorCodes.flat(Infinity).forEach((c, i) => {
+      styleString += `--gradient-color-${i + 1}: ${c};`;
+    });
+    gradientElm.setAttribute("style", styleString);
+    gradient.initGradient("#gradient-canvas");
+  });
 </script>
