@@ -1,15 +1,20 @@
 ---
-import Email from "/email.svg";
-import Github from "/github.svg";
-import LinkedIn from "/linkedin.svg";
+import Email from "./icons/email.svg";
+import Github from "./icons/github.svg";
+import LinkedIn from "./icons/linkedin.svg";
 
 const pages = [
   { name: "Om mig", url: "#about" },
+  { name: "Evner", url: "#skills" },
   { name: "Erfaring", url: "#experience" },
 ];
 
 const socials = [
-  { name: "mads.lousdal@gmail.com", url: "mailto:mads.lousdal@gmail.com", icon: Email },
+  {
+    name: "mads.lousdal@gmail.com",
+    url: "mailto:mads.lousdal@gmail.com",
+    icon: Email,
+  },
   { name: "Github", url: "https://github.com/MLousdal", icon: Github },
   {
     name: "LinkedIn",
@@ -19,15 +24,21 @@ const socials = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-10 bg-white dark:bg-black border-b-2">
+<header
+  class="fixed top-0 left-0 right-0 z-10 bg-white border-b-2 dark:bg-black"
+>
   <div
     class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto"
   >
-    <a href="#main" class="text-2xl outline-none font-display focus:underline hover:underline underline-offset-4 decoration-wavy decoration-primary-600">ML</a>
+    <a
+      href="#hero"
+      class="text-2xl outline-none font-display focus:underline hover:underline underline-offset-4 decoration-wavy decoration-primary-600"
+      >ML</a
+    >
     <button
       id="navbarBtn"
       type="button"
-      class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-black dark:text-white rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-black  dark:focus:ring-white"
+      class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-black rounded-lg dark:text-white lg:hidden focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
       aria-controls="navbar-solid-bg"
       aria-expanded="false"
     >
@@ -57,7 +68,7 @@ const socials = [
       >
         {
           pages.map((page) => (
-            <li class="m-0 last:pb-2 last:border-b-2 last:lg:border-b-0 last:lg:border-e-2 last:lg:pb-0 last:lg:pe-6">
+            <li class="m-0 last:pb-2 last:border-b-2 last:lg:border-b-0 last:lg:border-e-2 last:lg:pb-0 last:lg:pe-6 last:mb-2 last:lg:mb-0">
               <a
                 href={page.url}
                 class="block px-4 py-2 bg-transparent rounded outline-none font-display focus:underline hover:underline underline-offset-4 decoration-wavy decoration-primary-600 lg:p-0"
@@ -71,15 +82,20 @@ const socials = [
       <ul
         class="flex flex-col gap-2 font-medium rounded-lg lg:gap-6 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent"
       >
-      {
-        socials.map((page) => (
-          <li class="m-0">
-            <a href={page.url} target="_blank" class="outline-none social-link flex gap-4 px-4 py-2 bg-transparent rounded font-display focus:underline hover:underline underline-offset-4 decoration-wavy decoration-primary-600 lg:p-0">
-              <img class="block w-6" src={page.icon} alt={page.name} /> <span class="lg:hidden">{page.name}</span>
-            </a>
-          </li>
-        ))
-      }
+        {
+          socials.map((page) => (
+            <li class="m-0">
+              <a
+                href={page.url}
+                target="_blank"
+                class="flex gap-4 px-4 py-2 bg-transparent rounded outline-none social-link font-display focus:underline hover:underline underline-offset-4 decoration-wavy decoration-primary-600 lg:p-0"
+              >
+                <img class="block w-6" src={page.icon.src} alt={page.name} />{" "}
+                <span class="lg:hidden">{page.name}</span>
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
   </div>
@@ -92,12 +108,12 @@ const socials = [
 
   navbarBtn?.addEventListener("click", () => {
     if (!navbar?.classList.contains("hidden")) {
-        navbar?.classList.add("hidden");
-        navbar?.classList.remove("flex");
-      } else {
-        navbar?.classList.remove("hidden");
-        navbar?.classList.add("flex");
-      }
+      navbar?.classList.add("hidden");
+      navbar?.classList.remove("flex");
+    } else {
+      navbar?.classList.remove("hidden");
+      navbar?.classList.add("flex");
+    }
   });
 
   navbarLinks.forEach((l) => {
