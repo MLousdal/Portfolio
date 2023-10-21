@@ -1,8 +1,4 @@
 ---
-import Email from "./icons/email.svg";
-import Github from "./icons/github.svg";
-import LinkedIn from "./icons/linkedin.svg";
-
 const pages = [
   { name: "Om mig", url: "#about" },
   { name: "Evner", url: "#skills" },
@@ -13,13 +9,17 @@ const socials = [
   {
     name: "mads.lousdal@gmail.com",
     url: "mailto:mads.lousdal@gmail.com",
-    icon: Email,
+    icon: "/icons/email.svg",
   },
-  { name: "Github", url: "https://github.com/MLousdal", icon: Github },
+  {
+    name: "Github",
+    url: "https://github.com/MLousdal",
+    icon: "/icons/github.svg",
+  },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/mads-lousdal/",
-    icon: LinkedIn,
+    icon: "/icons/linkedin.svg",
   },
 ];
 ---
@@ -90,7 +90,7 @@ const socials = [
                 target="_blank"
                 class="flex gap-4 px-4 py-2 bg-transparent rounded outline-none social-link font-display focus:underline hover:underline underline-offset-4 decoration-wavy decoration-primary-600 lg:p-0"
               >
-                <img class="block w-6" src={page.icon.src} alt={page.name} />{" "}
+                <img class="block w-6" src={page.icon} alt={page.name} />
                 <span class="lg:hidden">{page.name}</span>
               </a>
             </li>

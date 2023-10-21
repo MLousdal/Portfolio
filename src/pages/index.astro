@@ -17,7 +17,7 @@ const experience = [
       href: "https://www.combine.dk/",
     },
     job: "Frontend udvikler",
-    logo: "https://www.combine.dk/media/m1npt3nj/logo-combine-blue.svg",
+    logo: { dark: "/logos/logo-combine-white.svg", light: "/logos/logo-combine-blue.svg" },
   },
   {
     body: "På fjerde semester var jeg i praktik hos Combine, og tilfældigvis sammen med to andre fra studiet. Jeg synes vi havde en rigtig god praktik, hvor vi fik lov til at prøve kræfter med både interne projekter og “rigtige” opgaver.",
@@ -29,7 +29,7 @@ const experience = [
       href: "https://www.combine.dk/",
     },
     job: "Praktikant",
-    logo: "https://www.combine.dk/media/m1npt3nj/logo-combine-blue.svg",
+    logo: { dark: "/logos/logo-combine-white.svg", light: "/logos/logo-combine-blue.svg" },
   },
 ];
 ---
@@ -39,7 +39,7 @@ const experience = [
     <div
       class="container flex flex-col justify-center h-full gap-8 lg:items-center lg:justify-between lg:flex-row"
     >
-      <header class="prose prose-lg lg:prose-xl h-fit dark:prose-invert">
+      <header class="prose prose-lg lg:prose-xl h-fit">
         <h1>
           <span class="text-lg text-primary-600">Hejsa!</span><br />Jeg er Mads
           Lousdal
