@@ -6,13 +6,8 @@ export interface Props {
   job: string;
   link?: Link;
   location: string;
-  logo?: Logo;
+  logo?: string;
   period: string;
-}
-
-export interface Logo {
-  light: string;
-  dark: string;
 }
 
 export interface Link {
@@ -26,7 +21,7 @@ const { classes, logo, link, period, location, job, company, body } =
 
 <article
   class:list={[
-    "p-4 gap-4 border-2 rounded-md max-w-none w-full shadow flex flex-col dark:shadow-white",
+    "p-4 gap-4 border-2 rounded-md max-w-none w-full shadow flex flex-col",
     classes,
   ]}
 >
@@ -59,24 +54,15 @@ const { classes, logo, link, period, location, job, company, body } =
     }
   </div>
   <div
-    class="flex flex-col-reverse items-start gap-4 prose dark:prose-invert md:items-center max-w-none md:flex-row lg:prose-lg prose-img:m-0 prose-p:m-0"
+    class="flex flex-col-reverse items-start gap-4 prose md:items-center max-w-none md:flex-row lg:prose-lg prose-img:m-0 prose-p:m-0"
   >
     {body && <p>{body}</p>}
     {
-      logo && logo.dark && (
+      logo && (
         <img
-          src={logo.dark}
+          src={logo}
           alt={company}
-          class="hidden dark:md:block w-fit max-h-6 md:w-1/5"
-        />
-      )
-    }
-    {
-      logo && logo.light && (
-        <img
-          src={logo.light}
-          alt={company}
-          class="hidden md:block dark:md:hidden w-fit max-h-6 md:w-1/5"
+          class="hidden md:block w-fit max-h-6 md:w-1/5"
         />
       )
     }

@@ -12,16 +12,16 @@ const { classes, img, href, title, body } = Astro.props;
 
 <article
   class:list={[
-    "border-2 rounded-md max-w-none prose prose-a:no-underline shadow flex flex-col dark:prose-invert dark:shadow-white",
+    "border-2 rounded-md max-w-none prose prose-a:no-underline shadow-lg flex flex-col",
     classes,
   ]}
 >
   <slot>
     <header class="p-4 pb-0">
       <a href={href}>
-        <h3 class="mt-0">
+        <h2 class="mt-0">
           {title}
-        </h3>
+        </h2>
       </a>
     </header>
     <p

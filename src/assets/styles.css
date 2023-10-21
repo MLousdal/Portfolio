@@ -6,7 +6,7 @@
   *,
   ::before,
   ::after {
-    @apply border-black dark:border-white;
+    @apply border-black;
   }
 
   h1,
@@ -27,7 +27,7 @@
   }
 
   hr[data-text]::before {
-    @apply absolute inline-block text-black dark:text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-white p-1 z-10 h-fit;
+    @apply absolute inline-block text-black top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1 z-10 h-fit;
     --tw-content: attr(data-text);
   }
 
@@ -35,20 +35,14 @@
     @apply my-4;
   }
 
-  .prose a[href] {
-    @apply underline;
+  a[href] {
+    @apply outline-none focus:underline hover:underline underline-offset-4 decoration-wavy decoration-primary-600;
   }
 
   .social-link:hover img,
   .social-link:focus img {
     filter: invert(18%) sepia(96%) saturate(2890%) hue-rotate(349deg)
       brightness(97%) contrast(92%);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .social-link img {
-      filter: invert(100%);
-    }
   }
 }
 
@@ -62,13 +56,13 @@
   }
 
   .btn {
-    @apply px-5 py-2 font-medium border-2 rounded-lg shadow focus:shadow-sm hover:shadow-sm active:shadow-none transition duration-100 ease-in primary-transition dark:shadow-white;
+    @apply px-5 py-2 font-medium border-2 rounded-lg shadow focus:shadow-sm hover:shadow-sm active:shadow-none transition duration-100 ease-in primary-transition;
   }
   .btn-sm {
-    @apply px-3 py-1 text-sm shadow-sm dark:shadow-white;
+    @apply px-3 py-1 text-sm shadow-sm;
   }
   .btn-lg {
-    @apply px-8 py-3 text-lg shadow-lg dark:shadow-white;
+    @apply px-8 py-3 text-lg shadow-lg;
   }
   .btn-icon {
     @apply flex items-center gap-2;
@@ -105,7 +99,7 @@
 
 @layer utilities {
   .primary-transition {
-    @apply hover:bg-black focus:bg-black hover:text-white focus:text-white dark:hover:bg-white dark:focus:bg-white dark:hover:text-black dark:focus:text-black;
+    @apply hover:bg-black focus:bg-black hover:text-white focus:text-white;
   }
   .info-transition {
     @apply hover:bg-blue-500 focus:bg-blue-500 hover:text-white focus:text-white;

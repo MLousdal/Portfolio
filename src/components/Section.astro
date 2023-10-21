@@ -1,0 +1,28 @@
+---
+export interface Props {
+  classes?: string;
+  containerClasses?: string;
+  id: string;
+  title?: string;
+}
+
+const { classes, containerClasses, id, title } = Astro.props;
+---
+
+<section class:list={["py-16 scroll-m-16", classes]} id={id}>
+  <div
+    class:list={[
+      "container flex flex-col items-center gap-8",
+      containerClasses,
+    ]}
+  >
+    {
+      title && (
+        <header class="w-full max-w-screen-md">
+          <h1 class="text-4xl">{title}</h1>
+        </header>
+      )
+    }
+    <slot />
+  </div>
+</section>

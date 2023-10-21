@@ -3,9 +3,10 @@ import Master from "../layouts/Master.astro";
 import Gradient from "../components/Gradient.astro";
 import Card from "../components/Card.astro";
 import Experience from "../components/Experience.astro";
-// import { Picture } from "astro:assets";
+import Section from "../components/Section.astro";
+import { Picture } from "astro:assets";
 
-// import AboutImg from "../assets/images/mads.jpg";
+import AboutImg from "../assets/images/mads.jpg";
 const experience = [
   {
     body: "Mit hovedansvar er at udvikle nye widgets, sider og webapplikationer, samtidig med at jeg sørger for vedligeholdelsen af eksisterende løsninger. Mit arbejde indebærer at omsætte designkoncepter til brugervenlige og funktionelle grænseflader, der hjælper med at skabe engagerende onlineoplevelser for vores brugere.",
@@ -17,7 +18,7 @@ const experience = [
       href: "https://www.combine.dk/",
     },
     job: "Frontend udvikler",
-    logo: { dark: "/logos/logo-combine-white.svg", light: "/logos/logo-combine-blue.svg" },
+    logo: "/logos/logo-combine-blue.svg",
   },
   {
     body: "På fjerde semester var jeg i praktik hos Combine, og tilfældigvis sammen med to andre fra studiet. Jeg synes vi havde en rigtig god praktik, hvor vi fik lov til at prøve kræfter med både interne projekter og “rigtige” opgaver.",
@@ -29,7 +30,7 @@ const experience = [
       href: "https://www.combine.dk/",
     },
     job: "Praktikant",
-    logo: { dark: "/logos/logo-combine-white.svg", light: "/logos/logo-combine-blue.svg" },
+    logo: "/logos/logo-combine-blue.svg",
   },
 ];
 ---
@@ -53,73 +54,73 @@ const experience = [
       <Gradient classes="w-1/2 lg:w-1/4" />
     </div>
   </section>
-  <section class="py-16 scroll-m-24" id="about">
-    <div class="container flex flex-col items-center gap-8">
-      <div class="prose prose-lg lg:prose-xl dark:prose-invert">
-        <header>
-          <h2>Lidt om mig</h2>
-        </header>
-        <p>
-          Som en frontend-udvikler med fokus på e-handel og webapplikationer har
-          jeg en løsnings orienteret tilgang, der er centreret omkring brugernes
-          behov og ønsker.
-        </p>
-      </div>
-      <!-- <Picture src={AboutImg} alt="Billede af mig"></Picture> -->
+  <Section id="about" title="Lidt om mig">
+    <div class="grid gap-6 lg:grid-cols-2 place-items-center">
+      <p class="prose max-w-none lg:max-w-prose lg:prose-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor
+        venenatis nisi in pharetra. Nullam convallis arcu vel cursus
+        ullamcorper. Proin sit amet nunc risus. Quisque sollicitudin est nec
+        tellus dictum, ut tristique sem gravida. Morbi a mi enim.<br /><br />
+        Etiam molestie dignissim vestibulum. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Morbi
+        fringilla eu felis et consequat. Curabitur posuere pharetra sem, vitae
+        commodo dolor cursus porttitor.<br /><br /> Quisque accumsan pretium leo
+        et vehicula. Nullam ut aliquam ex. Nulla hendrerit, ex et feugiat
+        consectetur, diam est dignissim est, ac rhoncus erat lectus quis nulla.
+        Donec vitae erat dui. Integer vestibulum suscipit mauris id placerat.
+        Sed a massa in urna bibendum malesuada suscipit at mauris. Nam convallis
+        malesuada nisl sit amet lacinia.
+      </p>
+      <Picture
+        src={AboutImg}
+        formats={["avif", "webp"]}
+        width={500}
+        densities={[1.5, 2]}
+        alt="Billede af mig"
+        class="w-full"
+        pictureAttributes={{ class: "w-full border-2 rounded shadow-lg" }}
+      />
     </div>
-  </section>
-  <section class="py-16 scroll-m-24" id="skills">
-    <div class="container flex flex-col items-center gap-8">
-      <header class="mb-2 prose prose-lg lg:prose-xl dark:prose-invert">
-        <h2>Hvad laver jeg?</h2>
-        <p>
-          Jeg arbejder som frontend-udvikler og har haft denne spændende rolle i
-          et år. Mit hovedansvar er at udvikle nye widgets, sider og
-          webapplikationer, samtidig med at jeg sørger for vedligeholdelsen af
-          eksisterende løsninger. Mit arbejde indebærer at omsætte
-          designkoncepter til brugervenlige og funktionelle grænseflader, der
-          hjælper med at skabe engagerende onlineoplevelser for vores brugere.
-        </p>
-      </header>
-      <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
-        <Card
-          title="Card With Header, Img And Footer"
-          body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
-          img="https://source.unsplash.com/AJgFLjnmSs4"
-        />
-        <Card
-          title="Card With Header, Img And Footer"
-          body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
-          img="https://source.unsplash.com/AJgFLjnmSs4"
-        />
-        <Card
-          title="Card With Header, Img And Footer"
-          body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
-          img="https://source.unsplash.com/AJgFLjnmSs4"
-        />
-      </div>
+  </Section>
+  <Section id="skills" title="Hvad kan jeg?">
+    <p class="prose max-w-none lg:max-w-prose lg:prose-lg">
+      Som en frontend-udvikler med fokus på e-handel og webapplikationer har jeg
+      en løsnings orienteret tilgang, der er centreret omkring brugernes behov
+      og ønsker.
+    </p>
+    <div class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+      <Card
+        title="Card With Header, Img And Footer"
+        body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
+        img="https://source.unsplash.com/AJgFLjnmSs4"
+      />
+      <Card
+        title="Card With Header, Img And Footer"
+        body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
+        img="https://source.unsplash.com/AJgFLjnmSs4"
+      />
+      <Card
+        title="Card With Header, Img And Footer"
+        body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
+        img="https://source.unsplash.com/AJgFLjnmSs4"
+      />
     </div>
-  </section>
-  <section class="py-16 scroll-m-24" id="experience">
-    <div class="container flex flex-col items-center gap-8">
-      <header class="w-full mb-2 prose prose-lg lg:prose-xl dark:prose-invert">
-        <h2>Professionel erfaring</h2>
-      </header>
-      <div class="flex flex-col max-w-screen-md gap-6">
-        {
-          experience.map((experience) => (
-            <Experience
-              job={experience.job}
-              company={experience.company}
-              location={experience.location}
-              period={experience.period}
-              link={experience.link}
-              body={experience.body}
-              logo={experience.logo}
-            />
-          ))
-        }
-      </div>
+  </Section>
+  <Section id="experience" title="Professionel erfaring">
+    <div class="flex flex-col max-w-screen-md gap-6">
+      {
+        experience.map((experience) => (
+          <Experience
+            job={experience.job}
+            company={experience.company}
+            location={experience.location}
+            period={experience.period}
+            link={experience.link}
+            body={experience.body}
+            logo={experience.logo}
+          />
+        ))
+      }
     </div>
-  </section>
+  </Section>
 </Master>
