@@ -1,0 +1,70 @@
+---
+export interface Props {
+  body?: string;
+  classes?: string;
+  company: string;
+  location: string;
+  period: string;
+  link?: Link;
+  job: string;
+  logo?: string;
+}
+
+export interface Link {
+  text: string;
+  href: string;
+}
+
+const { classes, logo, link, period, location, job, company, body } =
+  Astro.props;
+---
+
+<article
+  class:list={[
+    "p-4 gap-4 border-2 rounded-md max-w-none w-full shadow flex flex-col dark:shadow-white",
+    classes,
+  ]}
+>
+  <header>
+    <h2 class="flex justify-between gap-6 mt-0 text-xl font-semibold">
+      {job} @ {company}
+      {period && <time class="h2">{period}</time>}
+    </h2>
+  </header>
+  <div class="flex gap-4">
+    {
+      location && (
+        <p class="flex items-center gap-2 text-lg font-medium">
+          <i class="ico">location_on</i>
+          {location}
+        </p>
+      )
+    }
+    {
+      link && (
+        <p class="flex items-center gap-2 text-lg font-medium">
+          <>
+            <i class="ico">open_in_new</i>
+            <a href={link.href} target="_blank">
+              {link.text}
+            </a>
+          </>
+        </p>
+      )
+    }
+  </div>
+  <div
+    class="flex flex-col-reverse items-start gap-4 prose md:items-center max-w-none md:flex-row lg:prose-lg prose-img:m-0 prose-p:m-0"
+  >
+    {body && <p>{body}</p>}
+    {
+      logo && (
+        <img
+          src={logo}
+          alt={company}
+          class="hidden md:block w-fit max-h-6 md:w-1/5"
+        />
+      )
+    }
+  </div>
+</article>
