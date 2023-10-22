@@ -5,12 +5,12 @@ export interface Props {
 const { classes } = Astro.props;
 ---
 
-<div class:list={["border-2 rounded-md shadow-xl cursor-pointer", classes]}>
+<div class:list={["border-2 rounded-md shadow-xl cursor-pointer hover:shadow transition", classes]}>
   <canvas
     id="gradient-canvas"
     data-transition-in
     class="w-full h-full"
-    style="--gradient-color-1: #e63946;--gradient-color-2: #f1faee;--gradient-color-3: #457b9d;--gradient-color-4: #1d3557;"
+    style="--gradient-color-1: #2563eb;--gradient-color-2: #3b82f6;--gradient-color-3: #dc2626;--gradient-color-4: #ef4444;"
   ></canvas>
 </div>
 

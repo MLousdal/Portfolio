@@ -35,7 +35,7 @@
     @apply my-4;
   }
 
-  a[href] {
+  a[href]:not(.btn) {
     @apply outline-none focus:underline hover:underline underline-offset-4 decoration-wavy decoration-primary-600;
   }
 

@@ -32,6 +32,18 @@ const experience = [
     job: "Praktikant",
     logo: "/logos/logo-combine-blue.svg",
   },
+  {
+    body: "Undervisning i at arbejde med digitale medier og udvikling eller vedligeholdelse af websites og digitale brugergrænseflader. Samt grundige brugerundersøgelser og design.",
+    company: "UCN",
+    location: "Aalborg",
+    period: "2020 - 2022",
+    link: {
+      text: "ucn.dk",
+      href: "https://www.ucn.dk/uddannelser/multimediedesigner",
+    },
+    job: "Multimedie­designer",
+    logo: "/logos/ucn-logo-sort.svg",
+  },
 ];
 ---
 
@@ -40,16 +52,24 @@ const experience = [
     <div
       class="container flex flex-col justify-center h-full gap-8 lg:items-center lg:justify-between lg:flex-row"
     >
-      <header class="prose prose-lg lg:prose-xl h-fit">
-        <h1>
-          <span class="text-lg text-primary-600">Hejsa!</span><br />Jeg er Mads
-          Lousdal
+      <header>
+        <h1 class="text-6xl">
+          <span class="text-lg text-primary-600">Hejsa! Mit navn er<br /></span
+          >Mads Lousdal
         </h1>
-        <p>
+        <p class="mt-6 prose lg:prose-xl">
           Som en frontend-udvikler med fokus på e-handel og webapplikationer har
           jeg en løsnings orienteret tilgang, der er centreret omkring brugernes
           behov og ønsker.
         </p>
+        <div class="flex items-center gap-4 mt-6">
+          <a
+            class="flex items-center gap-2 btn btn-danger"
+            href="/MadsLousdal-CV.pdf"
+            download=""
+            ><i class="ico">download</i>Hent mit CV
+          </a>
+        </div>
       </header>
       <Gradient classes="w-1/2 lg:w-1/4" />
     </div>
@@ -61,7 +81,7 @@ const experience = [
         venenatis nisi in pharetra. Nullam convallis arcu vel cursus
         ullamcorper. Proin sit amet nunc risus. Quisque sollicitudin est nec
         tellus dictum, ut tristique sem gravida. Morbi a mi enim.<br /><br />
-        Etiam molestie dignissim vestibulum. Class aptent taciti sociosqu ad
+         Etiam molestie dignissim vestibulum. Class aptent taciti sociosqu ad
         litora torquent per conubia nostra, per inceptos himenaeos. Morbi
         fringilla eu felis et consequat. Curabitur posuere pharetra sem, vitae
         commodo dolor cursus porttitor.<br /><br /> Quisque accumsan pretium leo
@@ -83,30 +103,25 @@ const experience = [
     </div>
   </Section>
   <Section id="skills" title="Hvad kan jeg?">
-    <p class="prose max-w-none lg:max-w-prose lg:prose-lg">
-      Som en frontend-udvikler med fokus på e-handel og webapplikationer har jeg
-      en løsnings orienteret tilgang, der er centreret omkring brugernes behov
-      og ønsker.
-    </p>
     <div class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
       <Card
-        title="Card With Header, Img And Footer"
+        title="Widgets"
         body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
-        img="https://source.unsplash.com/AJgFLjnmSs4"
+        img="https://images.unsplash.com/photo-1530435460869-d13625c69bbf?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       />
       <Card
-        title="Card With Header, Img And Footer"
+        title="Sider"
         body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
-        img="https://source.unsplash.com/AJgFLjnmSs4"
+        img="https://images.unsplash.com/photo-1519211975560-4ca611f5a72a?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       />
       <Card
-        title="Card With Header, Img And Footer"
+        title="Web apps"
         body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
-        img="https://source.unsplash.com/AJgFLjnmSs4"
+        img="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       />
     </div>
   </Section>
-  <Section id="experience" title="Professionel erfaring">
+  <Section id="resume" title="Resumé">
     <div class="flex flex-col max-w-screen-md gap-6">
       {
         experience.map((experience) => (
