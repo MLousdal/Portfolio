@@ -6,6 +6,15 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			keyframes: {
+				rotate: {
+					'0%': { rotate: '0deg' },
+					'100%': { rotate: '360deg' },
+				}
+			},
+			animation: {
+				'spin-slow': 'rotate 15s linear infinite',
+			},
 			colors: {
 				primary: colors.red,
 			},
@@ -20,8 +29,8 @@ module.exports = {
 				'2xl': '16px 16px #000',
 			},
 			width: {
-        'prose': '65ch',
-      },
+				'prose': '65ch',
+			},
 			typography: ({ theme }) => ({
 				DEFAULT: {
 					css: {

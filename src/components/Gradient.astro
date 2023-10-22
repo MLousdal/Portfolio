@@ -5,13 +5,17 @@ export interface Props {
 const { classes } = Astro.props;
 ---
 
-<div class:list={["border-2 rounded-md shadow-xl cursor-pointer hover:shadow transition", classes]}>
+<div class:list={["relative", classes]}>
   <canvas
     id="gradient-canvas"
     data-transition-in
-    class="w-full h-full"
+    class="w-full h-full transition border-2 rounded-md shadow-xl cursor-pointer hover:shadow"
     style="--gradient-color-1: #2563eb;--gradient-color-2: #3b82f6;--gradient-color-3: #dc2626;--gradient-color-4: #ef4444;"
   ></canvas>
+  <img
+    src="/icons/star.svg"
+    class="absolute bottom-0 right-0 w-24 origin-bottom-right translate-x-1/2 translate-y-1/2 md:w-40 aspect-square motion-safe:animate-spin-slow"
+  />
 </div>
 
 <script>

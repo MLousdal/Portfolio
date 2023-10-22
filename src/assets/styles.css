@@ -55,6 +55,10 @@
     padding-left: 0 !important;
   }
 
+  .tag {
+    @apply px-3 py-1 text-sm shadow-sm font-medium border-2 rounded-lg;
+  }
+
   .btn {
     @apply px-5 py-2 font-medium border-2 rounded-lg shadow focus:shadow-sm hover:shadow-sm active:shadow-none transition duration-100 ease-in primary-transition;
   }
