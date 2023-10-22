@@ -21,7 +21,7 @@ const experience = [
     logo: "/logos/logo-combine-blue.svg",
   },
   {
-    body: "På fjerde semester var jeg i praktik hos Combine, og tilfældigvis sammen med to andre fra studiet. Jeg synes vi havde en rigtig god praktik, hvor vi fik lov til at prøve kræfter med både interne projekter og “rigtige” opgaver.",
+    body: "På fjerde semester var jeg i praktik hos Combine, hvor jeg fik lov til at prøve kræfter med både interne projekter og mindre  “rigtige” opgaver.",
     company: "Combine",
     location: "Aalborg",
     period: "2022 - 2022",
@@ -33,7 +33,7 @@ const experience = [
     logo: "/logos/logo-combine-blue.svg",
   },
   {
-    body: "Undervisning i at arbejde med digitale medier og udvikling eller vedligeholdelse af websites og digitale brugergrænseflader. Samt grundige brugerundersøgelser og design.",
+    body: "Undervisning i at arbejde med digitale medier, gennem grundige brugerundersøgelser, design og udvikling af websites og digitale brugergrænseflader.",
     company: "UCN",
     location: "Aalborg",
     period: "2020 - 2022",
@@ -65,16 +65,72 @@ const socials = [
     color: "btn-success",
   },
 ];
+const tools = [
+  {
+    name: "HTML",
+    color: "#e5532d",
+    icon: "/icons/tools/html.svg",
+    white: false,
+  },
+  { name: "CSS", color: "#2d53e5", icon: "/icons/tools/css.svg", white: true },
+  {
+    name: "Sass",
+    color: "#cd6799",
+    icon: "/icons/tools/sass.svg",
+    white: false,
+  },
+  {
+    name: "JavaScript",
+    color: "#f0dc55",
+    icon: "/icons/tools/javascript.svg",
+    white: false,
+  },
+  {
+    name: "TypeScript",
+    color: "#3179c7",
+    icon: "/icons/tools/typescript.svg",
+    white: false,
+  },
+  { name: "Vue", color: "#3fb984", icon: "/icons/tools/vue.svg", white: false },
+  {
+    name: "Nuxt",
+    color: "#08dd86",
+    icon: "/icons/tools/nuxtjs.svg",
+    white: false,
+  },
+  {
+    name: "Figma",
+    color: "#a25aff",
+    icon: "/icons/tools/figma.svg",
+    white: false,
+  },
+  {
+    name: "C#",
+    color: "#9e4d97",
+    icon: "/icons/tools/c-sharp.svg",
+    white: true,
+  },
+  {
+    name: "Umbraco",
+    color: "#3544b1",
+    icon: "/icons/tools/umbraco.svg",
+    white: true,
+  },
+];
 ---
 
 <Master title="Mads Lousdal">
-  <section class="grid min-h-screen py-16 bg-yellow-400 place-items-center scroll-m-24" id="hero">
+  <section
+    class="grid min-h-screen py-16 bg-yellow-400 place-items-center scroll-m-24"
+    id="hero"
+  >
     <div
       class="container flex flex-col justify-center h-full gap-8 lg:items-center lg:justify-between lg:flex-row"
     >
       <header>
         <h1 class="text-5xl sm:text-6xl">
-          <span class="text-sm">Hejsa! Mit navn er<br /></span>Mads Lousdal
+          <span class="text-sm sm:text-xl">Hejsa! Mit navn er<br /></span>Mads
+          Lousdal
         </h1>
         <p class="mt-6 prose lg:prose-xl">
           Som en frontend-udvikler med fokus på e-handel og webapplikationer har
@@ -94,22 +150,40 @@ const socials = [
     </div>
   </section>
   <Section id="about" title="Lidt om mig">
-    <div class="grid gap-6 lg:grid-cols-2 place-items-center">
-      <p class="prose max-w-none lg:max-w-prose lg:prose-lg">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor
-        venenatis nisi in pharetra. Nullam convallis arcu vel cursus
-        ullamcorper. Proin sit amet nunc risus. Quisque sollicitudin est nec
-        tellus dictum, ut tristique sem gravida. Morbi a mi enim.<br /><br />
-         Etiam molestie dignissim vestibulum. Class aptent taciti sociosqu ad
-        litora torquent per conubia nostra, per inceptos himenaeos. Morbi
-        fringilla eu felis et consequat. Curabitur posuere pharetra sem, vitae
-        commodo dolor cursus porttitor.<br /><br /> Quisque accumsan pretium leo
-        et vehicula. Nullam ut aliquam ex. Nulla hendrerit, ex et feugiat
-        consectetur, diam est dignissim est, ac rhoncus erat lectus quis nulla.
-        Donec vitae erat dui. Integer vestibulum suscipit mauris id placerat.
-        Sed a massa in urna bibendum malesuada suscipit at mauris. Nam convallis
-        malesuada nisl sit amet lacinia.
-      </p>
+    <div class="grid w-full gap-8 lg:grid-cols-2 place-items-center">
+      <div class="prose max-w-none lg:max-w-prose lg:prose-lg">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor
+          venenatis nisi in pharetra. Nullam convallis arcu vel cursus
+          ullamcorper. Proin sit amet nunc risus. Quisque sollicitudin est nec
+          tellus dictum, ut tristique sem gravida. Morbi a mi enim.<br /><br />
+           Etiam molestie dignissim vestibulum. Class aptent taciti sociosqu ad
+          litora torquent per conubia nostra, per inceptos himenaeos. Morbi
+          fringilla eu felis et consequat. Curabitur posuere pharetra sem, vitae
+          commodo dolor cursus porttitor.
+        </p>
+        <p>Her er nogle af de teknologier som jeg har arbejdet med:</p>
+        <ul class="flex flex-wrap items-center gap-4 not-prose">
+          {
+            tools.map((tool) => (
+              <li
+                class:list={[
+                  "flex items-center gap-2 tag",
+                  { "text-white": tool.white },
+                ]}
+                style={{ backgroundColor: tool.color }}
+              >
+                <img
+                  class:list={["block w-5", { invert: tool.white }]}
+                  src={tool.icon}
+                  alt=""
+                />
+                {tool.name}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
       <Picture
         src={AboutImg}
         formats={["avif", "webp"]}
@@ -122,7 +196,7 @@ const socials = [
     </div>
   </Section>
   <Section id="skills" title="Hvad kan jeg?">
-    <div class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+    <div class="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
       <Card
         title="Widgets"
         body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
@@ -141,7 +215,7 @@ const socials = [
     </div>
   </Section>
   <Section id="resume" title="Resumé">
-    <div class="flex flex-col max-w-screen-lg gap-6">
+    <div class="flex flex-col max-w-screen-lg gap-8">
       {
         experience.map((experience) => (
           <Experience
@@ -164,7 +238,7 @@ const socials = [
       gøre mit bedste for at vende tilbage til dig!
     </p>
     <ul
-      class="flex flex-col w-full gap-2 font-medium rounded-lg lg:w-fit lg:gap-6 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent"
+      class="flex flex-col w-full gap-2 font-medium rounded-lg lg:w-fit lg:gap-8 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent"
     >
       {
         socials.map((page) => (
