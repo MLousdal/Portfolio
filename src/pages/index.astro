@@ -47,12 +47,6 @@ const experience = [
 ];
 const socials = [
   {
-    name: "mads.lousdal@gmail.com",
-    url: "mailto:mads.lousdal@gmail.com",
-    icon: "/icons/email.svg",
-    color: "btn-warning",
-  },
-  {
     name: "MLousdal",
     url: "https://github.com/MLousdal",
     icon: "/icons/github.svg",
@@ -64,17 +58,23 @@ const socials = [
     icon: "/icons/linkedin.svg",
     color: "btn-info",
   },
+  {
+    name: "mads.lousdal@gmail.com",
+    url: "mailto:mads.lousdal@gmail.com",
+    icon: "/icons/email.svg",
+    color: "btn-success",
+  },
 ];
 ---
 
 <Master title="Mads Lousdal">
-  <section class="h-screen py-16 bg-yellow-400 scroll-m-24" id="hero">
+  <section class="grid min-h-screen py-16 bg-yellow-400 place-items-center scroll-m-24" id="hero">
     <div
       class="container flex flex-col justify-center h-full gap-8 lg:items-center lg:justify-between lg:flex-row"
     >
       <header>
-        <h1 class="text-6xl">
-          <span class="text-lg">Hejsa! Mit navn er<br /></span>Mads Lousdal
+        <h1 class="text-5xl sm:text-6xl">
+          <span class="text-sm">Hejsa! Mit navn er<br /></span>Mads Lousdal
         </h1>
         <p class="mt-6 prose lg:prose-xl">
           Som en frontend-udvikler med fokus på e-handel og webapplikationer har
