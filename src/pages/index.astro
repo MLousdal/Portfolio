@@ -45,6 +45,26 @@ const experience = [
     logo: "/logos/ucn-logo-sort.svg",
   },
 ];
+const socials = [
+  {
+    name: "mads.lousdal@gmail.com",
+    url: "mailto:mads.lousdal@gmail.com",
+    icon: "/icons/email.svg",
+    color: "btn-warning",
+  },
+  {
+    name: "MLousdal",
+    url: "https://github.com/MLousdal",
+    icon: "/icons/github.svg",
+    color: "btn-danger",
+  },
+  {
+    name: "Mads Lousdal",
+    url: "https://www.linkedin.com/in/mads-lousdal/",
+    icon: "/icons/linkedin.svg",
+    color: "btn-info",
+  },
+];
 ---
 
 <Master title="Mads Lousdal">
@@ -54,8 +74,7 @@ const experience = [
     >
       <header>
         <h1 class="text-6xl">
-          <span class="text-lg">Hejsa! Mit navn er<br /></span
-          >Mads Lousdal
+          <span class="text-lg">Hejsa! Mit navn er<br /></span>Mads Lousdal
         </h1>
         <p class="mt-6 prose lg:prose-xl">
           Som en frontend-udvikler med fokus på e-handel og webapplikationer har
@@ -137,5 +156,30 @@ const experience = [
         ))
       }
     </div>
+  </Section>
+  <Section id="contact" title="Kontakt">
+    <p class="prose max-w-none lg:max-w-prose lg:prose-lg">
+      Selvom jeg i øjeblikket ikke leder efter nye muligheder, står min indbakke
+      altid åben. Uanset om du har et spørgsmål eller bare vil sige hej, vil jeg
+      gøre mit bedste for at vende tilbage til dig!
+    </p>
+    <ul
+      class="flex flex-col w-full gap-2 font-medium rounded-lg lg:w-fit lg:gap-6 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent"
+    >
+      {
+        socials.map((page) => (
+          <li class="m-0 md:w-fit">
+            <a
+              href={page.url}
+              target="_blank"
+              class:list={["flex gap-4 social-link btn", page.color]}
+            >
+              <img class="block w-6" src={page.icon} alt={page.name} />{" "}
+              {page.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </Section>
 </Master>

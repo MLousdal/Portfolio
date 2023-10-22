@@ -38,12 +38,6 @@
   a[href]:not(.btn) {
     @apply outline-none focus:underline hover:underline underline-offset-4 decoration-wavy decoration-primary-600;
   }
-
-  .social-link:hover img,
-  .social-link:focus img {
-    filter: invert(18%) sepia(96%) saturate(2890%) hue-rotate(349deg)
-      brightness(97%) contrast(92%);
-  }
 }
 
 @layer components {
@@ -106,16 +100,16 @@
     @apply hover:bg-black focus:bg-black hover:text-white focus:text-white;
   }
   .info-transition {
-    @apply hover:bg-blue-500 focus:bg-blue-500 hover:text-white focus:text-white;
+    @apply hover:bg-blue-500 focus:bg-blue-500 hover:text-white focus:text-white [&>img]:invert;
   }
   .warning-transition {
     @apply hover:bg-yellow-400 focus:bg-yellow-400 hover:text-black focus:text-black;
   }
   .danger-transition {
-    @apply hover:bg-red-500 focus:bg-red-500 hover:text-black focus:text-black;
+    @apply hover:bg-red-500 focus:bg-red-500 hover:text-black focus:text-black [&>img]:invert [&>img]:hover:invert-0 [&>img]:focus:invert-0;
   }
   .success-transition {
-    @apply hover:bg-green-600 focus:bg-green-600 hover:text-black focus:text-black;
+    @apply hover:bg-green-600 focus:bg-green-600 hover:text-black focus:text-black [&>img]:invert [&>img]:hover:invert-0 [&>img]:focus:invert-0;
   }
 }
 

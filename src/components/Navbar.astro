@@ -3,24 +3,7 @@ const pages = [
   { name: "Om mig", url: "#about" },
   { name: "Evner", url: "#skills" },
   { name: "Resumé", url: "#resume" },
-];
-
-const socials = [
-  {
-    name: "mads.lousdal@gmail.com",
-    url: "mailto:mads.lousdal@gmail.com",
-    icon: "/icons/email.svg",
-  },
-  {
-    name: "Github",
-    url: "https://github.com/MLousdal",
-    icon: "/icons/github.svg",
-  },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/mads-lousdal/",
-    icon: "/icons/linkedin.svg",
-  },
+  { name: "Kontakt", url: "#contact" },
 ];
 ---
 
@@ -58,34 +41,16 @@ const socials = [
       aria-label="Main Menu"
     >
       <ul
-        class="flex flex-col gap-2 mt-4 font-medium rounded-lg lg:gap-6 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent"
+        class="flex flex-col items-center gap-2 mt-4 font-medium rounded-lg lg:gap-6 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent"
       >
         {
           pages.map((page) => (
-            <li class="m-0 last:pb-2 last:border-b-2 last:lg:border-b-0 last:lg:border-e-2 last:lg:pb-0 last:lg:pe-6 last:mb-2 last:lg:mb-0">
+            <li class="[&>a]:last:btn [&>a]:last:btn-sm [&>a]:last:btn-success [&>a]:last:hover:no-underline">
               <a
                 href={page.url}
-                class="block px-4 py-2 bg-transparent rounded font-display lg:p-0"
+                class="block px-4 py-2 rounded font-display lg:p-0"
               >
                 {page.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-      <ul
-        class="flex flex-col gap-2 font-medium rounded-lg lg:gap-6 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent"
-      >
-        {
-          socials.map((page) => (
-            <li class="m-0">
-              <a
-                href={page.url}
-                target="_blank"
-                class="flex gap-4 px-4 py-2 bg-transparent rounded social-link font-display lg:p-0"
-              >
-                <img class="block w-6" src={page.icon} alt={page.name} />
-                <span class="lg:hidden">{page.name}</span>
               </a>
             </li>
           ))
