@@ -18,6 +18,9 @@ module.exports = {
 			colors: {
 				primary: colors.red,
 			},
+			cursor: {
+				scream: "url(/icons/scream-mask.svg), pointer",
+			},
 			fontFamily: {
 				'display': ['"Lexend Mega"', ...defaultTheme.fontFamily.sans],
 			},

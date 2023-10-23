@@ -18,11 +18,9 @@ const { classes, img, href, title, body } = Astro.props;
 >
   <slot>
     <header class="p-4 pb-0">
-      <a href={href}>
-        <h2 class="mt-0">
-          {title}
-        </h2>
-      </a>
+      <h2 class="mt-0">
+        {title}
+      </h2>
     </header>
     <p
       class:list={["px-4 my-0", { "pb-4": !Astro.slots.has("footer") && !img }]}

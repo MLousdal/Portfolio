@@ -80,6 +80,12 @@ const tools = [
     white: false,
   },
   {
+    name: "Tailwind",
+    color: "#38bdf8",
+    icon: "/icons/tools/tailwind.svg",
+    white: false,
+  },
+  {
     name: "JavaScript",
     color: "#f0dc55",
     icon: "/icons/tools/javascript.svg",
@@ -150,17 +156,25 @@ const tools = [
     </div>
   </section>
   <Section id="about" title="Lidt om mig">
-    <div class="grid w-full gap-8 lg:grid-cols-2 place-items-center">
+    <div class="grid w-full gap-8 xl:grid-cols-2 place-items-center">
       <div class="prose max-w-none lg:max-w-prose lg:prose-lg">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor
-          venenatis nisi in pharetra. Nullam convallis arcu vel cursus
-          ullamcorper. Proin sit amet nunc risus. Quisque sollicitudin est nec
-          tellus dictum, ut tristique sem gravida. Morbi a mi enim.<br /><br />
-           Etiam molestie dignissim vestibulum. Class aptent taciti sociosqu ad
-          litora torquent per conubia nostra, per inceptos himenaeos. Morbi
-          fringilla eu felis et consequat. Curabitur posuere pharetra sem, vitae
-          commodo dolor cursus porttitor.
+          Efter at være vokset op i det blæsende Thy, har jeg fundet vej til
+          Aalborg hvor jeg nu bor sammen med min kæreste ❤️
+        </p>
+        <p>
+          Jeg blev uddannet som multimediedesigner i sommeren 2022, og har
+          arbejdet ved Combine siden. Før det har jeg bl.a arbejdet som
+          bartender, som har lært mig meget om kommunikation, prioritering og et
+          syn for detaljer.
+        </p>
+        <p>
+          Når jeg ikke sidder ved computeren, kan jeg oftest findes i det
+          nærmeste fitnesscenter i gang med at løfte hele verden. Derudover ser
+          jeg en del film som jeg holder af at rangere på <a
+            href="https://letterboxd.com/GameLad/"
+            target="_blank">Letterboxd</a
+          >. Nogle af mine favoritter er <span class="hover:cursor-scream">Scream serien</span>.
         </p>
         <p>Her er nogle af de teknologier som jeg har arbejdet med:</p>
         <ul class="flex flex-wrap items-center gap-4 not-prose">
@@ -186,8 +200,8 @@ const tools = [
       </div>
       <Picture
         src={AboutImg}
-        formats={["avif", "webp"]}
-        width={500}
+        formats={["webp"]}
+        width={1000}
         densities={[1.5, 2]}
         alt="Billede af mig"
         class="w-full"
@@ -248,7 +262,7 @@ const tools = [
               target="_blank"
               class:list={["flex gap-4 social-link btn", page.color]}
             >
-              <img class="block w-6" src={page.icon} alt={page.name} />{" "}
+              <img class="block w-6" src={page.icon} alt="" />
               {page.name}
             </a>
           </li>
