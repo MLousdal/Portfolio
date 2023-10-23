@@ -7,6 +7,81 @@ import Section from "../components/Section.astro";
 import { Picture } from "astro:assets";
 
 import AboutImg from "../assets/images/mads.jpg";
+const tools = [
+  {
+    name: "HTML",
+    color: "#e5532d",
+    icon: "/icons/tools/html.svg",
+    white: false,
+  },
+  { name: "CSS", color: "#2d53e5", icon: "/icons/tools/css.svg", white: true },
+  {
+    name: "Sass",
+    color: "#cd6799",
+    icon: "/icons/tools/sass.svg",
+    white: false,
+  },
+  {
+    name: "Tailwind",
+    color: "#38bdf8",
+    icon: "/icons/tools/tailwind.svg",
+    white: false,
+  },
+  {
+    name: "JavaScript",
+    color: "#f0dc55",
+    icon: "/icons/tools/javascript.svg",
+    white: false,
+  },
+  {
+    name: "TypeScript",
+    color: "#3179c7",
+    icon: "/icons/tools/typescript.svg",
+    white: false,
+  },
+  { name: "Vue", color: "#3fb984", icon: "/icons/tools/vue.svg", white: false },
+  {
+    name: "Nuxt",
+    color: "#08dd86",
+    icon: "/icons/tools/nuxtjs.svg",
+    white: false,
+  },
+  {
+    name: "Astro",
+    color: "#ffffff",
+    icon: "/icons/tools/astro.svg",
+    white: false,
+  },
+  {
+    name: "Figma",
+    color: "#a25aff",
+    icon: "/icons/tools/figma.svg",
+    white: false,
+  },
+  {
+    name: "C#",
+    color: "#9e4d97",
+    icon: "/icons/tools/c-sharp.svg",
+    white: true,
+  },
+  {
+    name: "Umbraco",
+    color: "#3544b1",
+    icon: "/icons/tools/umbraco.svg",
+    white: true,
+  },
+];
+const projects = [
+  {
+    title: "Kristina Linhartová's portfolio",
+    text: "I samarbejde med Kristina designede vi hendes portfolio. Hjemmesiden er oversat til både dansk og engelsk med i18n.",
+    image:
+      "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    tags: [tools[8], tools[3], tools[9]],
+    github: "https://github.com/MLousdal/Kristina-Portfolio",
+    link: "https://www.kristinalinhartova.com/",
+  },
+];
 const experience = [
   {
     body: "Mit hovedansvar er at udvikle nye widgets, sider og webapplikationer, samtidig med at jeg sørger for vedligeholdelsen af eksisterende løsninger. Mit arbejde indebærer at omsætte designkoncepter til brugervenlige og funktionelle grænseflader, der hjælper med at skabe engagerende onlineoplevelser for vores brugere.",
@@ -65,64 +140,6 @@ const socials = [
     color: "btn-success",
   },
 ];
-const tools = [
-  {
-    name: "HTML",
-    color: "#e5532d",
-    icon: "/icons/tools/html.svg",
-    white: false,
-  },
-  { name: "CSS", color: "#2d53e5", icon: "/icons/tools/css.svg", white: true },
-  {
-    name: "Sass",
-    color: "#cd6799",
-    icon: "/icons/tools/sass.svg",
-    white: false,
-  },
-  {
-    name: "Tailwind",
-    color: "#38bdf8",
-    icon: "/icons/tools/tailwind.svg",
-    white: false,
-  },
-  {
-    name: "JavaScript",
-    color: "#f0dc55",
-    icon: "/icons/tools/javascript.svg",
-    white: false,
-  },
-  {
-    name: "TypeScript",
-    color: "#3179c7",
-    icon: "/icons/tools/typescript.svg",
-    white: false,
-  },
-  { name: "Vue", color: "#3fb984", icon: "/icons/tools/vue.svg", white: false },
-  {
-    name: "Nuxt",
-    color: "#08dd86",
-    icon: "/icons/tools/nuxtjs.svg",
-    white: false,
-  },
-  {
-    name: "Figma",
-    color: "#a25aff",
-    icon: "/icons/tools/figma.svg",
-    white: false,
-  },
-  {
-    name: "C#",
-    color: "#9e4d97",
-    icon: "/icons/tools/c-sharp.svg",
-    white: true,
-  },
-  {
-    name: "Umbraco",
-    color: "#3544b1",
-    icon: "/icons/tools/umbraco.svg",
-    white: true,
-  },
-];
 ---
 
 <Master title="Mads Lousdal">
@@ -174,7 +191,9 @@ const tools = [
           jeg en del film som jeg holder af at rangere på <a
             href="https://letterboxd.com/GameLad/"
             target="_blank">Letterboxd</a
-          >. Nogle af mine favoritter er <span class="hover:cursor-scream">Scream serien</span>.
+          >. Nogle af mine favoritter er <span class="hover:cursor-scream"
+            >Scream</span
+          > serien.
         </p>
         <p>Her er nogle af de teknologier som jeg har arbejdet med:</p>
         <ul class="flex flex-wrap items-center gap-4 not-prose">
@@ -209,23 +228,60 @@ const tools = [
       />
     </div>
   </Section>
-  <Section id="skills" title="Hvad kan jeg?">
-    <div class="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
-      <Card
-        title="Widgets"
-        body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
-        img="https://images.unsplash.com/photo-1530435460869-d13625c69bbf?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-      <Card
-        title="Sider"
-        body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
-        img="https://images.unsplash.com/photo-1519211975560-4ca611f5a72a?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-      <Card
-        title="Web apps"
-        body="Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake."
-        img="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
+  <Section id="experiments" title="Hvad kan jeg?">
+    <div class="grid gap-8 place-items-center lg:gap-16 lg:grid-cols-2">
+      {
+        projects.map((project) => (
+          <Card title={project.title} body={project.text} img={project.image}>
+            <ul
+              slot="before-image"
+              class="flex flex-wrap items-center gap-4 px-4 not-prose"
+            >
+              {project.tags.map((tool) => (
+                <li
+                  class:list={[
+                    "flex items-center gap-2 tag",
+                    { "text-white": tool.white },
+                  ]}
+                  style={{ backgroundColor: tool.color }}
+                >
+                  <img
+                    class:list={["block w-5", { invert: tool.white }]}
+                    src={tool.icon}
+                    alt=""
+                  />
+                  {tool.name}
+                </li>
+              ))}
+            </ul>
+            <ul
+              slot="after-image"
+              class="flex flex-wrap items-center gap-4 p-4 pt-0 not-prose"
+            >
+              <li class="flex items-center gap-2">
+                <a
+                  class="flex items-center gap-2 btn btn-sm btn-success"
+                  href={project.link}
+                  target="_blank"
+                >
+                  <i class="ico">open_in_new</i>
+                  Se side
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-2 btn btn-sm btn-danger"
+                  href={project.github}
+                  target="_blank"
+                >
+                  <img class="block w-3.5" src="/icons/github.svg" alt="" />
+                  Se kode
+                </a>
+              </li>
+            </ul>
+          </Card>
+        ))
+      }
     </div>
   </Section>
   <Section id="resume" title="Resumé">

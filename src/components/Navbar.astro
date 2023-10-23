@@ -1,7 +1,7 @@
 ---
 const pages = [
   { name: "Om mig", url: "#about" },
-  { name: "Evner", url: "#skills" },
+  { name: "Eksperimenter", url: "#experiments" },
   { name: "Resumé", url: "#resume" },
   { name: "Kontakt", url: "#contact" },
 ];
@@ -46,10 +46,7 @@ const pages = [
         {
           pages.map((page) => (
             <li class="[&>a]:last:btn [&>a]:last:btn-sm [&>a]:last:btn-success [&>a]:last:hover:no-underline">
-              <a
-                href={page.url}
-                class="block py-2 rounded font-display lg:p-0"
-              >
+              <a href={page.url} class="block py-2 rounded font-display lg:p-0">
                 {page.name}
               </a>
             </li>
