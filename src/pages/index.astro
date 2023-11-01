@@ -7,6 +7,10 @@ import Section from "../components/Section.astro";
 import { Picture } from "astro:assets";
 
 import AboutImg from "../assets/images/mads.jpg";
+import CaseImgDice from "../assets/images/dice-case.png";
+import CaseImgPortfolio from "../assets/images/portfolio-case.png";
+import CaseImgBrutalist from "../assets/images/brutalist-case.png";
+
 const tools = [
   {
     name: "HTML",
@@ -70,16 +74,43 @@ const tools = [
     icon: "/icons/tools/umbraco.svg",
     white: true,
   },
+  {
+    name: "Liquid",
+    color: "#000099",
+    icon: "/icons/tools/liquid.svg",
+    white: true,
+  },
+  {
+    name: "A11y",
+    color: "#000",
+    icon: "/icons/tools/a11y.svg",
+    white: true,
+  },
 ];
 const projects = [
   {
+    title: "Terninge spil",
+    text: "Jeg har lavet et lille terninge spil i vue 3, hvor 2+ spillere skiftes til at slå med en terning. ",
+    image: CaseImgDice,
+    tags: [tools[6], tools[2], tools[9]],
+    github: "https://github.com/MLousdal/Vue-Dice-Game",
+    link: "https://vue-dice-game.vercel.app/",
+  },
+  {
     title: "Kristina Linhartová's portfolio",
     text: "I samarbejde med Kristina designede vi hendes portfolio. Hjemmesiden er oversat til både dansk og engelsk med i18n.",
-    image:
-      "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: CaseImgPortfolio,
     tags: [tools[8], tools[3], tools[9]],
     github: "https://github.com/MLousdal/Kristina-Portfolio",
     link: "https://www.kristinalinhartova.com/",
+  },
+  {
+    title: "Astro + Tailwindcss, Neubruatlist UI Kit",
+    text: "I forbindelse med udviklingen af dette portfolio har jeg lavet en skabelon ",
+    image: CaseImgBrutalist,
+    tags: [tools[8], tools[3]],
+    github: "https://github.com/MLousdal/Astro-Tailwindcss-Neubruatlist-UI-Kit",
+    link: "https://astro-tailwindcss-neubruatlist-ui-kit.vercel.app/",
   },
 ];
 const experience = [
@@ -229,10 +260,10 @@ const socials = [
     </div>
   </Section>
   <Section id="experiments" title="Hvad kan jeg?">
-    <div class="grid gap-8 place-items-center lg:gap-16 lg:grid-cols-2">
+    <div class="grid gap-8 place-items-center lg:gap-32 lg:grid-cols-2">
       {
         projects.map((project) => (
-          <Card title={project.title} body={project.text} img={project.image}>
+          <Card title={project.title} body={project.text} img={project.image} classes="lg:even:row-span-2">
             <ul
               slot="before-image"
               class="flex flex-wrap items-center gap-4 px-4 not-prose"

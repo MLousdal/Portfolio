@@ -1,8 +1,10 @@
 ---
+import { Picture } from "astro:assets";
+
 export interface Props {
   title?: string;
   body?: string;
-  img?: string;
+  img?: any;
   classes?: string;
 }
 
@@ -22,6 +24,18 @@ const { classes, img, title, body } = Astro.props;
   </header>
   <p class="px-4 my-0">{body}</p>
   <slot name="before-image" />
-  {img && <img class="my-0" src={img} alt="" />}
+  {
+    img && (
+      <Picture
+        src={img}
+        formats={["webp"]}
+        width={1000}
+        densities={[1.5, 2]}
+        alt={title ?? ""}
+        class="w-full"
+        pictureAttributes={{ class: "w-full mt-auto mb-0" }}
+      />
+    )
+  }
   <slot name="after-image" />
 </article>
