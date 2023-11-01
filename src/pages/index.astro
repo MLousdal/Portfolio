@@ -90,7 +90,7 @@ const tools = [
 const projects = [
   {
     title: "Terninge spil",
-    text: "Jeg har lavet et lille terninge spil i vue 3, hvor 2+ spillere skiftes til at slå med en terning. ",
+    text: "Dice on ice er et digitalt terningespil lavet i Vue, hvor 2+ spillere kæmper om at være den første til at nå 50 point.",
     image: CaseImgDice,
     tags: [tools[6], tools[2], tools[9]],
     github: "https://github.com/MLousdal/Vue-Dice-Game",
@@ -260,7 +260,7 @@ const socials = [
     </div>
   </Section>
   <Section id="experiments" title="Hvad kan jeg?">
-    <div class="grid gap-8 place-items-center lg:gap-32 lg:grid-cols-2">
+    <div class="grid gap-8 place-items-center lg:gap-16 xl:gap-32 lg:grid-cols-2">
       {
         projects.map((project) => (
           <Card title={project.title} body={project.text} img={project.image} classes="lg:even:row-span-2">
