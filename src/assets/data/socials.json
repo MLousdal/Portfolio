@@ -1,0 +1,20 @@
+{
+  "github": {
+    "name": "MLousdal",
+    "url": "https://github.com/MLousdal",
+    "icon": "/icons/github.svg",
+    "color": "btn-danger"
+  },
+  "linkedIn": {
+    "name": "Mads Lousdal",
+    "url": "https://www.linkedin.com/in/mads-lousdal/",
+    "icon": "/icons/linkedin.svg",
+    "color": "btn-info"
+  },
+  "email": {
+    "name": "mads.lousdal@gmail.com",
+    "url": "mailto:mads.lousdal@gmail.com",
+    "icon": "/icons/email.svg",
+    "color": "btn-success"
+  }
+}

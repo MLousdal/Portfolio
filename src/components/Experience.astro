@@ -1,13 +1,8 @@
 ---
+import type { IExperience } from "../models/models";
+
 export interface Props {
-  body?: string;
-  classes?: string;
-  company: string;
-  job: string;
-  link?: Link;
-  location: string;
-  logo?: string;
-  period: string;
+  experience: IExperience;
 }
 
 export interface Link {
@@ -15,50 +10,52 @@ export interface Link {
   href: string;
 }
 
-const { classes, logo, link, period, location, job, company, body } =
-  Astro.props;
+const { experience } = Astro.props;
 ---
 
 <article
-  class:list={[
-    "p-4 gap-4 border-2 rounded-md max-w-none w-full shadow flex flex-col",
-    classes,
-  ]}
+  class="p-4 gap-4 border-2 rounded-md max-w-none w-full shadow flex flex-col"
 >
   <header>
-    <h2 class="flex justify-between gap-6 mt-0 text-xl font-semibold">
-      {job} @ {company}
-      {period && <time class="h2">{period}</time>}
+    <h2
+      class="flex flex-col md:flex-row gap-2 md:justify-between md:gap-6 mt-0 text-lg md:text-xl font-semibold"
+    >
+      {experience.job} @ {experience.company}
+      {experience.period && <time>{experience.period}</time>}
     </h2>
   </header>
   <div
     class="grid gap-4 prose md:grid-cols-5 place-items-center max-w-none lg:prose-lg prose-img:m-0 prose-p:m-0"
   >
-    {body && <p class="col-span-4">{body}</p>}
+    {experience.body && <p class="col-span-4">{experience.body}</p>}
     {
-      logo && (
-        <img src={logo} alt={company} class="hidden max-w-full md:block w-fit max-h-8" />
+      experience.logo && (
+        <img
+          src={experience.logo}
+          alt={experience.company}
+          class="hidden max-w-full md:block w-fit max-h-8"
+        />
       )
     }
   </div>
   <div class="flex gap-4">
     {
-      location && (
+      experience.location && (
         <p class="flex items-center gap-2 text-white bg-blue-600 tag">
           <i class="ico">location_on</i>
-          {location}
+          {experience.location}
         </p>
       )
     }
     {
-      link && (
+      experience.link && (
         <a
-          href={link.href}
+          href={experience.link.href}
           target="_blank"
           class="flex items-center gap-2 btn btn-sm btn-success"
         >
           <i class="ico">open_in_new</i>
-          {link.text}
+          {experience.link.text}
         </a>
       )
     }

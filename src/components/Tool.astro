@@ -1,0 +1,21 @@
+---
+import type { ITool } from "../models/models"
+
+export interface Props {
+  tool: ITool;
+}
+
+const { tool } = Astro.props;
+---
+
+<li
+  class:list={["flex items-center gap-2 tag", { "text-white": tool.white }]}
+  style={{ backgroundColor: tool.color }}
+>
+  <img
+    class:list={["block w-5", { invert: tool.white }]}
+    src={tool.icon}
+    alt=""
+  />
+  {tool.name}
+</li>

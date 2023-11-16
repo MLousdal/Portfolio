@@ -1,0 +1,26 @@
+{
+  "combine": {
+    "body": "Mit hovedansvar er at udvikle nye widgets, sider og webapplikationer, samtidig med at jeg sørger for vedligeholdelsen af eksisterende løsninger. Mit arbejde indebærer at omsætte designkoncepter til brugervenlige og funktionelle grænseflader, der hjælper med at skabe engagerende onlineoplevelser for vores brugere.",
+    "company": "Combine",
+    "location": "Aalborg",
+    "period": "2022 - Nu",
+    "link": {
+      "text": "combine.dk",
+      "href": "https://www.combine.dk/"
+    },
+    "job": "Frontend udvikler",
+    "logo": "/logos/logo-combine-blue.svg"
+  },
+  "combineIntern": {
+    "body": "På fjerde semester var jeg i praktik hos Combine, hvor jeg fik lov til at prøve kræfter med både interne projekter og mindre  “rigtige” opgaver.",
+    "company": "Combine",
+    "location": "Aalborg",
+    "period": "2022 - 2022",
+    "link": {
+      "text": "combine.dk",
+      "href": "https://www.combine.dk/"
+    },
+    "job": "Praktikant",
+    "logo": "/logos/logo-combine-blue.svg"
+  }
+}

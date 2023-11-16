@@ -1,0 +1,26 @@
+{
+  "mmd": {
+    "body": "Undervisning i at arbejde med digitale medier, gennem grundige brugerundersøgelser, design og udvikling af websites og digitale brugergrænseflader.",
+    "company": "UCN",
+    "location": "Aalborg",
+    "period": "2020 - 2022",
+    "link": {
+      "text": "ucn.dk",
+      "href": "https://www.ucn.dk/uddannelser/multimediedesigner"
+    },
+    "job": "Multimedie­designer",
+    "logo": "/logos/ucn-logo-sort.svg"
+  },
+  "vue": {
+    "body": "Eksamener består af både multiple-choice-spørgsmål og praktiske kodningsudfordringer, designet til at teste din viden og forståelse af, hvad der kræves for at bruge Vue i dets fulde omfang til at levere de bedst mulige resultater.",
+    "company": "Vue School",
+    "location": "Online",
+    "period": "2023",
+    "link": {
+      "text": "certificates.dev",
+      "href": "https://certificates.dev/vuejs"
+    },
+    "job": "Certificeret Vue udvikler",
+    "logo": "/logos/vueschool.png"
+  }
+}

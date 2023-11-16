@@ -1,0 +1,80 @@
+{
+  "html": {
+    "name": "HTML",
+    "color": "#e5532d",
+    "icon": "/icons/tools/html.svg",
+    "white": false
+  },
+  "css": {
+    "name": "CSS",
+    "color": "#2d53e5",
+    "icon": "/icons/tools/css.svg",
+    "white": true
+  },
+  "sass": {
+    "name": "Sass",
+    "color": "#cd6799",
+    "icon": "/icons/tools/sass.svg",
+    "white": false
+  },
+  "tailwind": {
+    "name": "Tailwind",
+    "color": "#38bdf8",
+    "icon": "/icons/tools/tailwind.svg",
+    "white": false
+  },
+  "javascript": {
+    "name": "JavaScript",
+    "color": "#f0dc55",
+    "icon": "/icons/tools/javascript.svg",
+    "white": false
+  },
+  "typescript": {
+    "name": "TypeScript",
+    "color": "#3179c7",
+    "icon": "/icons/tools/typescript.svg",
+    "white": false
+  },
+  "vue": {
+    "name": "Vue",
+    "color": "#3fb984",
+    "icon": "/icons/tools/vue.svg",
+    "white": false
+  },
+  "nuxt": {
+    "name": "Nuxt",
+    "color": "#08dd86",
+    "icon": "/icons/tools/nuxtjs.svg",
+    "white": false
+  },
+  "astro": {
+    "name": "Astro",
+    "color": "#ffffff",
+    "icon": "/icons/tools/astro.svg",
+    "white": false
+  },
+  "figma": {
+    "name": "Figma",
+    "color": "#a25aff",
+    "icon": "/icons/tools/figma.svg",
+    "white": false
+  },
+  "c#": {
+    "name": "C#",
+    "color": "#9e4d97",
+    "icon": "/icons/tools/c-sharp.svg",
+    "white": true
+  },
+  "umbraco": {
+    "name": "Umbraco",
+    "color": "#3544b1",
+    "icon": "/icons/tools/umbraco.svg",
+    "white": true
+  },
+  "a11y": {
+    "name": "A11y",
+    "color": "#000",
+    "icon": "/icons/tools/a11y.svg",
+    "white": true
+  }
+}

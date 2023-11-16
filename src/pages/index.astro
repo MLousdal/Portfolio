@@ -4,171 +4,50 @@ import Gradient from "../components/Gradient.astro";
 import Card from "../components/Card.astro";
 import Experience from "../components/Experience.astro";
 import Section from "../components/Section.astro";
+import Tool from "../components/Tool.astro";
 import { Picture } from "astro:assets";
 
 import AboutImg from "../assets/images/mads.jpg";
 import CaseImgDice from "../assets/images/dice-case.png";
 import CaseImgPortfolio from "../assets/images/portfolio-case.png";
-import CaseImgBrutalist from "../assets/images/brutalist-case.png";
+import CaseImgDrinkster from "../assets/images/drinkster-case.png";
 
-const tools = [
-  {
-    name: "HTML",
-    color: "#e5532d",
-    icon: "/icons/tools/html.svg",
-    white: false,
-  },
-  { name: "CSS", color: "#2d53e5", icon: "/icons/tools/css.svg", white: true },
-  {
-    name: "Sass",
-    color: "#cd6799",
-    icon: "/icons/tools/sass.svg",
-    white: false,
-  },
-  {
-    name: "Tailwind",
-    color: "#38bdf8",
-    icon: "/icons/tools/tailwind.svg",
-    white: false,
-  },
-  {
-    name: "JavaScript",
-    color: "#f0dc55",
-    icon: "/icons/tools/javascript.svg",
-    white: false,
-  },
-  {
-    name: "TypeScript",
-    color: "#3179c7",
-    icon: "/icons/tools/typescript.svg",
-    white: false,
-  },
-  { name: "Vue", color: "#3fb984", icon: "/icons/tools/vue.svg", white: false },
-  {
-    name: "Nuxt",
-    color: "#08dd86",
-    icon: "/icons/tools/nuxtjs.svg",
-    white: false,
-  },
-  {
-    name: "Astro",
-    color: "#ffffff",
-    icon: "/icons/tools/astro.svg",
-    white: false,
-  },
-  {
-    name: "Figma",
-    color: "#a25aff",
-    icon: "/icons/tools/figma.svg",
-    white: false,
-  },
-  {
-    name: "C#",
-    color: "#9e4d97",
-    icon: "/icons/tools/c-sharp.svg",
-    white: true,
-  },
-  {
-    name: "Umbraco",
-    color: "#3544b1",
-    icon: "/icons/tools/umbraco.svg",
-    white: true,
-  },
-  {
-    name: "Liquid",
-    color: "#000099",
-    icon: "/icons/tools/liquid.svg",
-    white: true,
-  },
-  {
-    name: "A11y",
-    color: "#000",
-    icon: "/icons/tools/a11y.svg",
-    white: true,
-  },
-];
+import type { ITool, IExperience, ISocial } from "../models/models";
+
+import ToolsData from "../assets/data/tools.json";
+import ExperienceData from "../assets/data/experience.json";
+import EducationData from "../assets/data/education.json";
+import SocialsData from "../assets/data/socials.json";
+
+const tools: ITool[] = Object.values(ToolsData);
+const experience: IExperience[] = Object.values(ExperienceData);
+const education: IExperience[] = Object.values(EducationData);
+const socials: ISocial[] = Object.values(SocialsData);
+
 const projects = [
   {
-    title: "Terninge spil",
-    text: "Dice on ice er et digitalt terningespil lavet i Vue, hvor 2+ spillere kæmper om at være den første til at nå 50 point.",
-    image: CaseImgDice,
-    tags: [tools[6], tools[2], tools[9]],
-    github: "https://github.com/MLousdal/Vue-Dice-Game",
-    link: "https://vue-dice-game.vercel.app/",
+    title: "Drinkster",
+    text: "Uanset om du mangler kort eller terninger, har Drink'ster din ryg med drukspil som det klassiske over/under kortspil.",
+    image: CaseImgDrinkster,
+    tags: ["vue", "tailwind", "figma"],
+    github: "https://github.com/MLousdal/Drinkster",
+    link: "https://drinkster.vercel.app/",
   },
   {
     title: "Kristina Linhartová's portfolio",
     text: "I samarbejde med Kristina designede vi hendes portfolio. Hjemmesiden er oversat til både dansk og engelsk med i18n.",
     image: CaseImgPortfolio,
-    tags: [tools[8], tools[3], tools[9]],
+    tags: ["astro", "tailwind", "figma"],
     github: "https://github.com/MLousdal/Kristina-Portfolio",
     link: "https://www.kristinalinhartova.com/",
   },
   {
-    title: "Astro + Tailwindcss, Neubruatlist UI Kit",
-    text: "I forbindelse med udviklingen af dette portfolio har jeg lavet en skabelon ",
-    image: CaseImgBrutalist,
-    tags: [tools[8], tools[3]],
-    github: "https://github.com/MLousdal/Astro-Tailwindcss-Neubruatlist-UI-Kit",
-    link: "https://astro-tailwindcss-neubruatlist-ui-kit.vercel.app/",
-  },
-];
-const experience = [
-  {
-    body: "Mit hovedansvar er at udvikle nye widgets, sider og webapplikationer, samtidig med at jeg sørger for vedligeholdelsen af eksisterende løsninger. Mit arbejde indebærer at omsætte designkoncepter til brugervenlige og funktionelle grænseflader, der hjælper med at skabe engagerende onlineoplevelser for vores brugere.",
-    company: "Combine",
-    location: "Aalborg",
-    period: "2022 - Nu",
-    link: {
-      text: "combine.dk",
-      href: "https://www.combine.dk/",
-    },
-    job: "Frontend udvikler",
-    logo: "/logos/logo-combine-blue.svg",
-  },
-  {
-    body: "På fjerde semester var jeg i praktik hos Combine, hvor jeg fik lov til at prøve kræfter med både interne projekter og mindre  “rigtige” opgaver.",
-    company: "Combine",
-    location: "Aalborg",
-    period: "2022 - 2022",
-    link: {
-      text: "combine.dk",
-      href: "https://www.combine.dk/",
-    },
-    job: "Praktikant",
-    logo: "/logos/logo-combine-blue.svg",
-  },
-  {
-    body: "Undervisning i at arbejde med digitale medier, gennem grundige brugerundersøgelser, design og udvikling af websites og digitale brugergrænseflader.",
-    company: "UCN",
-    location: "Aalborg",
-    period: "2020 - 2022",
-    link: {
-      text: "ucn.dk",
-      href: "https://www.ucn.dk/uddannelser/multimediedesigner",
-    },
-    job: "Multimedie­designer",
-    logo: "/logos/ucn-logo-sort.svg",
-  },
-];
-const socials = [
-  {
-    name: "MLousdal",
-    url: "https://github.com/MLousdal",
-    icon: "/icons/github.svg",
-    color: "btn-danger",
-  },
-  {
-    name: "Mads Lousdal",
-    url: "https://www.linkedin.com/in/mads-lousdal/",
-    icon: "/icons/linkedin.svg",
-    color: "btn-info",
-  },
-  {
-    name: "mads.lousdal@gmail.com",
-    url: "mailto:mads.lousdal@gmail.com",
-    icon: "/icons/email.svg",
-    color: "btn-success",
+    title: "Terninge spil",
+    text: "Dice on ice er et digitalt terningespil lavet i Vue, hvor 2+ spillere kæmper om at være den første til at nå 50 point.",
+    image: CaseImgDice,
+    tags: ["vue", "sass", "figma"],
+    github: "https://github.com/MLousdal/Vue-Dice-Game",
+    link: "https://vue-dice-game.vercel.app/",
   },
 ];
 ---
@@ -228,24 +107,7 @@ const socials = [
         </p>
         <p>Her er nogle af de teknologier som jeg har arbejdet med:</p>
         <ul class="flex flex-wrap items-center gap-4 not-prose">
-          {
-            tools.map((tool) => (
-              <li
-                class:list={[
-                  "flex items-center gap-2 tag",
-                  { "text-white": tool.white },
-                ]}
-                style={{ backgroundColor: tool.color }}
-              >
-                <img
-                  class:list={["block w-5", { invert: tool.white }]}
-                  src={tool.icon}
-                  alt=""
-                />
-                {tool.name}
-              </li>
-            ))
-          }
+          {tools.map((tool) => <Tool tool={tool} />)}
         </ul>
       </div>
       <Picture
@@ -259,30 +121,24 @@ const socials = [
       />
     </div>
   </Section>
-  <Section id="experiments" title="Hvad kan jeg?">
-    <div class="grid gap-8 place-items-center lg:gap-16 xl:gap-32 lg:grid-cols-2">
+  <Section id="projects" title="Projekter">
+    <div
+      class="grid gap-8 place-items-center lg:gap-16 xl:gap-32 lg:grid-cols-2"
+    >
       {
         projects.map((project) => (
-          <Card title={project.title} body={project.text} img={project.image} classes="lg:even:row-span-2">
+          <Card
+            title={project.title}
+            body={project.text}
+            img={project.image}
+            classes="lg:even:row-span-2"
+          >
             <ul
               slot="before-image"
               class="flex flex-wrap items-center gap-4 px-4 not-prose"
             >
               {project.tags.map((tool) => (
-                <li
-                  class:list={[
-                    "flex items-center gap-2 tag",
-                    { "text-white": tool.white },
-                  ]}
-                  style={{ backgroundColor: tool.color }}
-                >
-                  <img
-                    class:list={["block w-5", { invert: tool.white }]}
-                    src={tool.icon}
-                    alt=""
-                  />
-                  {tool.name}
-                </li>
+                <Tool tool={ToolsData[tool]} />
               ))}
             </ul>
             <ul
@@ -315,21 +171,14 @@ const socials = [
       }
     </div>
   </Section>
-  <Section id="resume" title="Resumé">
+  <Section id="resume" title="Erfaring">
     <div class="flex flex-col max-w-screen-lg gap-8">
-      {
-        experience.map((experience) => (
-          <Experience
-            job={experience.job}
-            company={experience.company}
-            location={experience.location}
-            period={experience.period}
-            link={experience.link}
-            body={experience.body}
-            logo={experience.logo}
-          />
-        ))
-      }
+      {experience.map((experience) => <Experience experience={experience} />)}
+    </div>
+  </Section>
+  <Section id="education" title="Uddannelse">
+    <div class="flex flex-col max-w-screen-lg gap-8">
+      {education.map((education) => <Experience experience={education} />)}
     </div>
   </Section>
   <Section id="contact" title="Kontakt">
