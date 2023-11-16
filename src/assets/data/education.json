@@ -12,7 +12,7 @@
     "logo": "/logos/ucn-logo-sort.svg"
   },
   "vue": {
-    "body": "Eksamener består af både multiple-choice-spørgsmål og praktiske kodningsudfordringer, designet til at teste din viden og forståelse af, hvad der kræves for at bruge Vue i dets fulde omfang til at levere de bedst mulige resultater.",
+    "body": "Eksamen består af både multiple-choice-spørgsmål og praktiske kodningsudfordringer, designet til at teste din viden og forståelse af, hvad der kræves for at bruge Vue i dets fulde omfang til at levere de bedst mulige resultater.",
     "company": "Vue School",
     "location": "Online",
     "period": "2023",
