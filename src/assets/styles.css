@@ -3,137 +3,137 @@
 @tailwind utilities;
 
 @layer base {
-  *,
-  ::before,
-  ::after {
-    @apply border-black;
-  }
+	*,
+	::before,
+	::after {
+		@apply border-black;
+	}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-display;
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-display;
+	}
 
-  h1 {
-    @apply text-4xl mb-0;
-  }
+	h1 {
+		@apply text-4xl mb-0;
+	}
 
-  hr {
-    @apply border relative z-0;
-  }
+	hr {
+		@apply border relative z-0;
+	}
 
-  hr[data-text]::before {
-    @apply absolute inline-block text-black top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1 z-10 h-fit;
-    --tw-content: attr(data-text);
-  }
+	hr[data-text]::before {
+		@apply absolute inline-block text-black top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1 z-10 h-fit;
+		--tw-content: attr(data-text);
+	}
 
-  .prose hr {
-    @apply my-4;
-  }
+	.prose hr:not(.not-prose) {
+		@apply my-4;
+	}
 
-  a[href]:not(.btn) {
-    @apply outline-none focus:underline hover:underline underline-offset-4 decoration-wavy decoration-primary-600;
-  }
+	a[href]:not(.btn) {
+		@apply outline-none focus:underline hover:underline underline-offset-4 decoration-wavy decoration-primary-600;
+	}
 }
 
 @layer components {
-  .container {
-    @apply mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 relative;
-  }
-  .list {
-    @apply border-2 rounded-md;
-    padding-left: 0 !important;
-  }
+	.container {
+		@apply mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 relative;
+	}
+	.list {
+		@apply border-2 rounded-md;
+		padding-left: 0 !important;
+	}
 
-  .tag {
-    @apply px-3 py-1 text-sm shadow-sm font-medium border-2 rounded-lg;
-  }
+	.tag {
+		@apply px-3 py-1 text-sm shadow-sm font-medium border-2 rounded-lg;
+	}
 
-  .btn {
-    @apply px-5 py-2 font-medium border-2 rounded-lg shadow focus:shadow-sm hover:shadow-sm active:shadow-none transition transition-[filter] duration-100 ease-in primary-transition;
-  }
-  .btn-sm {
-    @apply px-3 py-1 text-sm shadow-sm;
-  }
-  .btn-lg {
-    @apply px-8 py-3 text-lg shadow-lg;
-  }
-  .btn-icon {
-    @apply flex items-center gap-2;
-  }
-  .btn-info {
-    @apply bg-blue-600 text-white info-transition;
-  }
-  .btn-info-outline {
-    @apply text-blue-600 info-transition;
-  }
-  .btn-warning {
-    @apply bg-yellow-500 text-black warning-transition;
-  }
-  .btn-warning-outline {
-    @apply text-yellow-500 warning-transition;
-  }
-  .btn-danger {
-    @apply bg-red-600 text-white danger-transition;
-  }
-  .btn-danger-outline {
-    @apply text-red-600 danger-transition;
-  }
-  .btn-success {
-    @apply bg-green-700 text-white success-transition;
-  }
-  .btn-success-outline {
-    @apply text-green-700 success-transition;
-  }
-  .btn:disabled,
-  .btn[disabled] {
-    @apply shadow-none cursor-not-allowed bg-transparent border-gray-500 text-gray-500 hover:border-gray-500 hover:text-gray-500 hover:bg-transparent;
-  }
+	.btn {
+		@apply px-5 py-2 font-medium border-2 rounded-lg shadow focus:shadow-sm hover:shadow-sm active:shadow-none transition transition-[filter] duration-100 ease-in primary-transition;
+	}
+	.btn-sm {
+		@apply px-3 py-1 text-sm shadow-sm;
+	}
+	.btn-lg {
+		@apply px-8 py-3 text-lg shadow-lg;
+	}
+	.btn-icon {
+		@apply flex items-center gap-2;
+	}
+	.btn-info {
+		@apply bg-blue-600 text-white info-transition;
+	}
+	.btn-info-outline {
+		@apply text-blue-600 info-transition;
+	}
+	.btn-warning {
+		@apply bg-yellow-500 text-black warning-transition;
+	}
+	.btn-warning-outline {
+		@apply text-yellow-500 warning-transition;
+	}
+	.btn-danger {
+		@apply bg-red-600 text-white danger-transition;
+	}
+	.btn-danger-outline {
+		@apply text-red-600 danger-transition;
+	}
+	.btn-success {
+		@apply bg-green-700 text-white success-transition;
+	}
+	.btn-success-outline {
+		@apply text-green-700 success-transition;
+	}
+	.btn:disabled,
+	.btn[disabled] {
+		@apply shadow-none cursor-not-allowed bg-transparent border-gray-500 text-gray-500 hover:border-gray-500 hover:text-gray-500 hover:bg-transparent;
+	}
 }
 
 @layer utilities {
-  .primary-transition {
-    @apply hover:bg-black focus:bg-black hover:text-white focus:text-white;
-  }
-  .info-transition {
-    @apply hover:bg-blue-500 focus:bg-blue-500 hover:text-white focus:text-white [&>img]:invert;
-  }
-  .warning-transition {
-    @apply hover:bg-yellow-400 focus:bg-yellow-400 hover:text-black focus:text-black;
-  }
-  .danger-transition {
-    @apply hover:bg-red-500 focus:bg-red-500 hover:text-black focus:text-black [&>img]:invert [&>img]:hover:invert-0 [&>img]:focus:invert-0;
-  }
-  .success-transition {
-    @apply hover:bg-green-600 focus:bg-green-600 hover:text-black focus:text-black [&>img]:invert [&>img]:hover:invert-0 [&>img]:focus:invert-0;
-  }
+	.primary-transition {
+		@apply hover:bg-black focus:bg-black hover:text-white focus:text-white;
+	}
+	.info-transition {
+		@apply hover:bg-blue-500 focus:bg-blue-500 hover:text-white focus:text-white [&>img]:invert;
+	}
+	.warning-transition {
+		@apply hover:bg-yellow-400 focus:bg-yellow-400 hover:text-black focus:text-black;
+	}
+	.danger-transition {
+		@apply hover:bg-red-500 focus:bg-red-500 hover:text-black focus:text-black [&>img]:invert [&>img]:hover:invert-0 [&>img]:focus:invert-0;
+	}
+	.success-transition {
+		@apply hover:bg-green-600 focus:bg-green-600 hover:text-black focus:text-black [&>img]:invert [&>img]:hover:invert-0 [&>img]:focus:invert-0;
+	}
 }
 
 .ico {
-  font-family: "Material Symbols Outlined";
-  font-weight: normal;
-  font-style: normal;
-  font-size: inherit; /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
+	font-family: "Material Symbols Outlined";
+	font-weight: normal;
+	font-style: normal;
+	font-size: inherit; /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
 
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
 
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
 
-  /* Support for IE. */
-  font-feature-settings: "liga";
+	/* Support for IE. */
+	font-feature-settings: "liga";
 }

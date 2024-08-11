@@ -25,185 +25,136 @@ const education: IExperience[] = Object.values(EducationData);
 const socials: ISocial[] = Object.values(SocialsData);
 
 const projects = [
-  {
-    title: "Drink'ster",
-    text: "Uanset om du mangler kort eller terninger, har Drink'ster din ryg med drukspil som det klassiske over/under kortspil.",
-    image: CaseImgDrinkster,
-    tags: ["vue", "tailwind", "figma"],
-    github: "https://github.com/MLousdal/Drinkster",
-    link: "https://drinkster.vercel.app/",
-  },
-  {
-    title: "Kristina Linhartová's portfolio",
-    text: "I samarbejde med Kristina designede vi hendes portfolio. Hjemmesiden er oversat til både dansk og engelsk med i18n.",
-    image: CaseImgPortfolio,
-    tags: ["astro", "tailwind", "figma"],
-    github: "https://github.com/MLousdal/Kristina-Portfolio",
-    link: "https://www.kristinalinhartova.com/",
-  },
-  {
-    title: "Terninge spil",
-    text: "Dice on ice er et digitalt terningespil lavet i Vue, hvor 2+ spillere kæmper om at være den første til at nå 50 point.",
-    image: CaseImgDice,
-    tags: ["vue", "sass", "figma"],
-    github: "https://github.com/MLousdal/Vue-Dice-Game",
-    link: "https://vue-dice-game.vercel.app/",
-  },
+	{
+		title: "Drink'ster",
+		text: "Uanset om du mangler kort eller terninger, har Drink'ster din ryg med drukspil som det klassiske over/under kortspil.",
+		image: CaseImgDrinkster,
+		tags: ["vue", "tailwind", "figma"],
+		github: "https://github.com/MLousdal/Drinkster",
+		link: "https://drinkster.vercel.app/",
+	},
+	{
+		title: "Kristina Linhartová's portfolio",
+		text: "I samarbejde med Kristina designede vi hendes portfolio. Hjemmesiden er oversat til både dansk og engelsk med i18n.",
+		image: CaseImgPortfolio,
+		tags: ["astro", "tailwind", "figma"],
+		github: "https://github.com/MLousdal/Kristina-Portfolio",
+		link: "https://www.kristinalinhartova.com/",
+	},
+	{
+		title: "Terninge spil",
+		text: "Dice on ice er et digitalt terningespil lavet i Vue, hvor 2+ spillere kæmper om at være den første til at nå 50 point.",
+		image: CaseImgDice,
+		tags: ["vue", "sass", "figma"],
+		github: "https://github.com/MLousdal/Vue-Dice-Game",
+		link: "https://vue-dice-game.vercel.app/",
+	},
 ];
 ---
 
 <Master title="Mads Lousdal">
-  <section
-    class="grid min-h-screen py-16 bg-yellow-400 place-items-center scroll-m-24"
-    id="hero"
-  >
-    <div
-      class="container flex flex-col justify-center h-full gap-8 lg:items-center lg:justify-between lg:flex-row"
-    >
-      <header>
-        <h1 class="text-5xl sm:text-6xl">
-          <span class="text-sm sm:text-xl">Hejsa! Mit navn er<br /></span>Mads
-          Lousdal
-        </h1>
-        <p class="mt-6 prose lg:prose-xl">
-          Som en frontend-udvikler med fokus på e-handel og webapplikationer har
-          jeg en løsnings orienteret tilgang, der er centreret omkring brugernes
-          behov og ønsker.
-        </p>
-        <div class="flex items-center gap-4 mt-6">
-          <a
-            class="flex items-center gap-2 btn btn-danger"
-            href="/Mads-Lousdal-CV.pdf"
-            download=""
-            ><i class="ico">download</i>Hent mit CV
-          </a>
-        </div>
-      </header>
-      <Gradient classes="w-1/2 lg:w-1/4" />
-    </div>
-  </section>
-  <Section id="about" title="Lidt om mig">
-    <div class="grid w-full gap-8 xl:grid-cols-2 place-items-center">
-      <div class="prose max-w-none lg:max-w-prose lg:prose-lg">
-        <p>
-          Efter at være vokset op i det blæsende Thy, har jeg fundet vej til
-          Aalborg hvor jeg nu bor sammen med min kæreste ❤️
-        </p>
-        <p>
-          Jeg blev uddannet som multimediedesigner i sommeren 2022, og har
-          arbejdet ved Combine siden. Før det har jeg bl.a arbejdet som
-          bartender, som har lært mig meget om kommunikation, prioritering og et
-          syn for detaljer.
-        </p>
-        <p>
-          Når jeg ikke sidder ved computeren, kan jeg oftest findes i det
-          nærmeste fitnesscenter i gang med at løfte hele verden. Derudover ser
-          jeg en del film som jeg holder af at rangere på <a
-            href="https://letterboxd.com/GameLad/"
-            target="_blank">Letterboxd</a
-          >. Nogle af mine favoritter er <span class="hover:cursor-scream"
-            >Scream</span
-          > serien.
-        </p>
-        <p>Her er nogle af de teknologier som jeg har arbejdet med:</p>
-        <ul class="flex flex-wrap items-center gap-4 not-prose">
-          {tools.map((tool) => <Tool tool={tool} />)}
-        </ul>
-      </div>
-      <Picture
-        src={AboutImg}
-        formats={["webp"]}
-        width={1000}
-        densities={[1.5, 2]}
-        alt="Billede af mig"
-        class="w-full"
-        pictureAttributes={{ class: "w-full border-2 rounded shadow-lg" }}
-      />
-    </div>
-  </Section>
-  <Section id="projects" title="Fremhævede Projekter">
-    <div
-      class="grid gap-8 place-items-center lg:gap-16 xl:gap-32 lg:grid-cols-2"
-    >
-      {
-        projects.map((project) => (
-          <Card
-            title={project.title}
-            body={project.text}
-            img={project.image}
-            classes="lg:even:row-span-2"
-          >
-            <ul
-              slot="before-image"
-              class="flex flex-wrap items-center gap-4 px-4 not-prose"
-            >
-              {project.tags.map((tool) => (
-                <Tool tool={ToolsData[tool]} />
-              ))}
-            </ul>
-            <ul
-              slot="after-image"
-              class="flex flex-wrap items-center gap-4 p-4 pt-0 not-prose"
-            >
-              <li class="flex items-center gap-2">
-                <a
-                  class="flex items-center gap-2 btn btn-sm btn-success"
-                  href={project.link}
-                  target="_blank"
-                >
-                  <i class="ico">open_in_new</i>
-                  Se side
-                </a>
-              </li>
-              <li>
-                <a
-                  class="flex items-center gap-2 btn btn-sm btn-danger"
-                  href={project.github}
-                  target="_blank"
-                >
-                  <img class="block w-3.5" src="/icons/github.svg" alt="" />
-                  Se kode
-                </a>
-              </li>
-            </ul>
-          </Card>
-        ))
-      }
-    </div>
-  </Section>
-  <Section id="resume" title="Erfaring">
-    <div class="flex flex-col max-w-screen-lg gap-8">
-      {experience.map((experience) => <Experience experience={experience} />)}
-    </div>
-  </Section>
-  <Section id="education" title="Uddannelse">
-    <div class="flex flex-col max-w-screen-lg gap-8">
-      {education.map((education) => <Experience experience={education} />)}
-    </div>
-  </Section>
-  <Section id="contact" title="Kontakt">
-    <p class="prose max-w-none lg:max-w-prose lg:prose-lg">
-      Selvom jeg i øjeblikket ikke leder efter nye muligheder, står min indbakke
-      altid åben. Uanset om du har et spørgsmål eller bare vil sige hej, vil jeg
-      gøre mit bedste for at vende tilbage til dig!
-    </p>
-    <ul
-      class="flex flex-col w-full gap-2 font-medium rounded-lg lg:w-fit lg:gap-8 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent"
-    >
-      {
-        socials.map((page) => (
-          <li class="m-0 md:w-fit">
-            <a
-              href={page.url}
-              target="_blank"
-              class:list={["flex gap-4 social-link btn", page.color]}
-            >
-              <img class="block w-6" src={page.icon} alt="" />
-              {page.name}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </Section>
+	<section class="grid min-h-screen py-16 bg-yellow-400 place-items-center scroll-m-24" id="hero">
+		<div class="container flex flex-col justify-center h-full gap-8 lg:items-center lg:justify-between lg:flex-row">
+			<header>
+				<h1 class="text-5xl sm:text-6xl">
+					<span class="text-sm sm:text-xl">Hejsa! Mit navn er<br /></span>Mads Lousdal
+				</h1>
+				<p class="mt-6 prose lg:prose-xl">
+					Som en frontend-udvikler med fokus på e-handel og webapplikationer har jeg en løsnings orienteret tilgang, der er centreret omkring
+					brugernes behov og ønsker.
+				</p>
+				<div class="flex items-center gap-4 mt-6">
+					<a class="flex items-center gap-2 btn btn-danger" href="/Mads-Lousdal-CV.pdf" download=""><i class="ico">download</i>Hent mit CV</a>
+				</div>
+			</header>
+			<Gradient classes="w-1/2 lg:w-1/4" />
+		</div>
+	</section>
+	<Section id="about" title="Lidt om mig">
+		<div class="grid w-full gap-8 xl:grid-cols-2 place-items-center">
+			<div class="prose max-w-none lg:max-w-prose lg:prose-lg">
+				<p>Efter at være vokset op i det blæsende Thy, har jeg fundet vej til Aalborg hvor jeg nu bor sammen med min kæreste ❤️</p>
+				<p>
+					Jeg blev uddannet som multimediedesigner i sommeren 2022, og har arbejdet ved Combine siden. Før det har jeg bl.a arbejdet som bartender,
+					som har lært mig meget om kommunikation, prioritering og et syn for detaljer.
+				</p>
+				<p>
+					Når jeg ikke sidder ved computeren, kan jeg oftest findes i det nærmeste fitnesscenter i gang med at løfte hele verden. Derudover ser jeg en
+					del film som jeg holder af at rangere på <a href="https://letterboxd.com/GameLad/" target="_blank">Letterboxd</a>. Nogle af mine favoritter
+					er <span class="hover:cursor-scream">Scream</span> serien.
+				</p>
+				<p>Her er nogle af de teknologier som jeg har arbejdet med:</p>
+				<ul class="flex flex-wrap items-center gap-4 not-prose">
+					{tools.map((tool) => <Tool tool={tool} />)}
+				</ul>
+			</div>
+			<Picture
+				src={AboutImg}
+				formats={["webp"]}
+				width={1000}
+				densities={[1.5, 2]}
+				alt="Billede af mig"
+				class="w-full"
+				pictureAttributes={{ class: "w-full border-2 rounded shadow-lg" }}
+			/>
+		</div>
+	</Section>
+	<Section id="projects" title="Fremhævede Projekter">
+		<div class="flex flex-col gap-8 place-items-center lg:gap-16 xl:gap-32">
+			{
+				projects.map((project) => (
+					<Card title={project.title} body={project.text} img={project.image} classes="lg:even:row-span-2">
+						<ul class="flex flex-wrap items-center gap-4 not-prose">
+							{project.tags.map((tool) => (
+								<Tool tool={ToolsData[tool]} />
+							))}
+						</ul>
+						<hr class="block lg:hidden not-prose" />
+						<ul class="flex flex-wrap items-center gap-4 not-prose">
+							<li class="flex items-center gap-2">
+								<a class="flex items-center gap-2 btn btn-sm btn-success" href={project.link} target="_blank">
+									<i class="ico">open_in_new</i>
+									Se side
+								</a>
+							</li>
+							<li>
+								<a class="flex items-center gap-2 btn btn-sm btn-danger" href={project.github} target="_blank">
+									<img class="block w-3.5" src="/icons/github.svg" alt="" />
+									Se kode
+								</a>
+							</li>
+						</ul>
+					</Card>
+				))
+			}
+		</div>
+	</Section>
+	<Section id="resume" title="Erfaring">
+		<div class="flex flex-col max-w-screen-lg gap-8">
+			{experience.map((experience) => <Experience experience={experience} />)}
+		</div>
+	</Section>
+	<Section id="education" title="Uddannelse">
+		<div class="flex flex-col max-w-screen-lg gap-8">
+			{education.map((education) => <Experience experience={education} />)}
+		</div>
+	</Section>
+	<Section id="contact" title="Kontakt">
+		<p class="prose max-w-none lg:max-w-prose lg:prose-lg">
+			Selvom jeg i øjeblikket ikke leder efter nye muligheder, står min indbakke altid åben. Uanset om du har et spørgsmål eller bare vil sige hej,
+			vil jeg gøre mit bedste for at vende tilbage til dig!
+		</p>
+		<ul class="flex flex-col w-full gap-2 font-medium rounded-lg lg:w-fit lg:gap-8 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent">
+			{
+				socials.map((page) => (
+					<li class="m-0 md:w-fit">
+						<a href={page.url} target="_blank" class:list={["flex gap-4 btn", page.color]}>
+							<img class="block w-6" src={page.icon} alt="" />
+							{page.name}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</Section>
 </Master>
